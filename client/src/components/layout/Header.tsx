@@ -23,7 +23,6 @@ const navigation = [
       { name: "Accounting & Tax", href: "/services/accounting", description: "Expert financial services" },
     ],
   },
-  { name: "Pricing", href: "/pricing" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },

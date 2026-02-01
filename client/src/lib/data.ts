@@ -1,4 +1,4 @@
-import type { Service, PricingPlan, PortfolioProject, Testimonial, FAQ, BlogPost } from "@shared/schema";
+import type { Service, PortfolioProject, Testimonial, FAQ, BlogPost } from "@shared/schema";
 
 export const websiteServices: Service[] = [
   {
@@ -115,105 +115,6 @@ export const accountingServices: Service[] = [
     ],
     icon: "trending-up",
     href: "/services/accounting",
-  },
-];
-
-export const pricingPlans: PricingPlan[] = [
-  {
-    id: "web-starter",
-    name: "Starter",
-    description: "Perfect for personal websites and small projects",
-    price: "$999",
-    period: "one-time",
-    features: [
-      "Up to 5 pages",
-      "Mobile responsive design",
-      "Basic SEO setup",
-      "Contact form",
-      "1 month support",
-    ],
-    category: "websites",
-  },
-  {
-    id: "web-growth",
-    name: "Growth",
-    description: "Ideal for growing businesses and professionals",
-    price: "$2,499",
-    period: "one-time",
-    features: [
-      "Up to 15 pages",
-      "Custom design",
-      "Advanced SEO",
-      "CMS integration",
-      "Analytics dashboard",
-      "3 months support",
-    ],
-    highlighted: true,
-    category: "websites",
-  },
-  {
-    id: "web-pro",
-    name: "Pro",
-    description: "Complete solution for established businesses",
-    price: "$4,999",
-    period: "one-time",
-    features: [
-      "Unlimited pages",
-      "E-commerce ready",
-      "Custom features",
-      "Priority support",
-      "12 months maintenance",
-      "Performance optimization",
-    ],
-    category: "websites",
-  },
-  {
-    id: "acc-starter",
-    name: "Essential",
-    description: "Basic bookkeeping for solopreneurs",
-    price: "$199",
-    period: "/month",
-    features: [
-      "Monthly bookkeeping",
-      "Bank reconciliation",
-      "Expense tracking",
-      "Monthly reports",
-      "Email support",
-    ],
-    category: "accounting",
-  },
-  {
-    id: "acc-growth",
-    name: "Business",
-    description: "Complete accounting for growing businesses",
-    price: "$499",
-    period: "/month",
-    features: [
-      "Full bookkeeping",
-      "Payroll support",
-      "Tax preparation",
-      "Financial statements",
-      "Dedicated accountant",
-      "Phone support",
-    ],
-    highlighted: true,
-    category: "accounting",
-  },
-  {
-    id: "acc-pro",
-    name: "Enterprise",
-    description: "Comprehensive financial management",
-    price: "Custom",
-    period: "pricing",
-    features: [
-      "Full-service accounting",
-      "CFO services",
-      "Strategic planning",
-      "Audit support",
-      "Custom reporting",
-      "Priority support",
-    ],
-    category: "accounting",
   },
 ];
 

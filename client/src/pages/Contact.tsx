@@ -370,8 +370,8 @@ export default function Contact() {
             <Button size="lg" variant="secondary" asChild data-testid="button-view-services-contact">
               <Link href="/services">View Our Services</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild data-testid="button-view-pricing-contact">
-              <Link href="/pricing">See Pricing</Link>
+            <Button size="lg" variant="outline" asChild data-testid="button-view-portfolio-contact">
+              <Link href="/portfolio">See Our Work</Link>
             </Button>
           </div>
         </div>

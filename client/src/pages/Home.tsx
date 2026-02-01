@@ -271,8 +271,8 @@ export default function Home() {
             <Button size="lg" variant="secondary" asChild data-testid="button-cta-consultation">
               <Link href="/contact">Book Free Consultation</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild data-testid="button-cta-pricing">
-              <Link href="/pricing">View Pricing</Link>
+            <Button size="lg" variant="outline" asChild data-testid="button-cta-services">
+              <Link href="/services">View Services</Link>
             </Button>
           </div>
         </div>
