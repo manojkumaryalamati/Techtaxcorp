@@ -73,7 +73,7 @@ const whyChooseUs = [
   "Transparent pricing with no hidden fees",
   "Fast turnaround without sacrificing quality",
   "Ongoing support and maintenance",
-  "500+ satisfied clients nationwide",
+  "Nationwide service availability",
 ];
 
 export default function About() {
@@ -110,7 +110,7 @@ export default function About() {
                 services.
               </p>
               <p className="text-muted-foreground mb-6">
-                Based in Texas, USA, we serve clients across the United States, combining local
+                Based in Texas, USA, we serve businesses across the United States, combining local
                 personal touch with the convenience of remote collaboration. Our team brings together
                 years of experience in web development, design, accounting, and tax preparation.
               </p>
@@ -123,20 +123,20 @@ export default function About() {
             <div className="space-y-6">
               <Card className="bg-primary/5 border-primary/20">
                 <CardContent className="p-6">
-                  <div className="text-4xl font-bold text-primary mb-2">500+</div>
-                  <p className="text-muted-foreground">Clients served nationwide</p>
+                  <div className="text-4xl font-bold text-primary mb-2">10+</div>
+                  <p className="text-muted-foreground">Years of combined experience</p>
                 </CardContent>
               </Card>
               <Card className="bg-chart-2/5 border-chart-2/20">
                 <CardContent className="p-6">
-                  <div className="text-4xl font-bold text-chart-2 mb-2">10+</div>
-                  <p className="text-muted-foreground">Years of combined experience</p>
+                  <div className="text-4xl font-bold text-chart-2 mb-2">50+</div>
+                  <p className="text-muted-foreground">States served nationwide</p>
                 </CardContent>
               </Card>
               <Card className="bg-chart-4/5 border-chart-4/20">
                 <CardContent className="p-6">
-                  <div className="text-4xl font-bold text-chart-4 mb-2">98%</div>
-                  <p className="text-muted-foreground">Client satisfaction rate</p>
+                  <div className="text-4xl font-bold text-chart-4 mb-2">24/7</div>
+                  <p className="text-muted-foreground">Support availability</p>
                 </CardContent>
               </Card>
             </div>
