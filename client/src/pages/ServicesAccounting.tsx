@@ -134,9 +134,6 @@ export default function ServicesAccounting() {
               <Button size="lg" asChild data-testid="button-get-started-acc">
                 <Link href="/contact">Get Started</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild data-testid="button-view-pricing-acc">
-                <Link href="/pricing">View Pricing</Link>
-              </Button>
             </div>
           </div>
         </div>

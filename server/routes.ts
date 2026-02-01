@@ -95,7 +95,6 @@ Disallow: /api/
       { loc: "/services", priority: "0.9", changefreq: "weekly" },
       { loc: "/services/websites", priority: "0.8", changefreq: "weekly" },
       { loc: "/services/accounting", priority: "0.8", changefreq: "weekly" },
-      { loc: "/pricing", priority: "0.8", changefreq: "monthly" },
       { loc: "/portfolio", priority: "0.7", changefreq: "weekly" },
       { loc: "/about", priority: "0.7", changefreq: "monthly" },
       { loc: "/blog", priority: "0.8", changefreq: "daily" },

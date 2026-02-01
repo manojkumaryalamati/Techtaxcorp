@@ -134,8 +134,8 @@ export default function ServicesWebsites() {
               <Button size="lg" asChild data-testid="button-get-started-web">
                 <Link href="/contact">Get Started</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild data-testid="button-view-pricing-web">
-                <Link href="/pricing">View Pricing</Link>
+              <Button size="lg" variant="outline" asChild data-testid="button-view-portfolio-web">
+                <Link href="/portfolio">See Our Work</Link>
               </Button>
             </div>
           </div>
