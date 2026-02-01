@@ -96,14 +96,6 @@ export function Header() {
           </NavigationMenu>
         </div>
 
-        <div className="hidden lg:flex lg:items-center lg:gap-3">
-          <Button variant="outline" asChild data-testid="button-consultation">
-            <Link href="/contact">Book Consultation</Link>
-          </Button>
-          <Button asChild data-testid="button-get-started">
-            <Link href="/contact">Get Started</Link>
-          </Button>
-        </div>
 
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger asChild className="lg:hidden">
@@ -167,18 +159,6 @@ export function Header() {
                   </div>
                 ))}
               </nav>
-              <div className="flex flex-col gap-2 pt-4 border-t">
-                <Button variant="outline" asChild className="w-full">
-                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    Book Consultation
-                  </Link>
-                </Button>
-                <Button asChild className="w-full">
-                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    Get Started
-                  </Link>
-                </Button>
-              </div>
             </div>
           </SheetContent>
         </Sheet>
