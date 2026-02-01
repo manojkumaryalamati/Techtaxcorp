@@ -110,7 +110,7 @@ export default function About() {
                 services.
               </p>
               <p className="text-muted-foreground mb-6">
-                Based in [City, State], we serve clients across the United States, combining local
+                Based in Texas, USA, we serve clients across the United States, combining local
                 personal touch with the convenience of remote collaboration. Our team brings together
                 years of experience in web development, design, accounting, and tax preparation.
               </p>

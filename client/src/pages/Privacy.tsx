@@ -124,7 +124,7 @@ export default function Privacy() {
             <p>
               <strong>Email:</strong> techtaxcorp@gmail.com
               <br />
-              <strong>Address:</strong> [City, State]
+              <strong>Address:</strong> Texas, USA
             </p>
           </div>
         </div>
