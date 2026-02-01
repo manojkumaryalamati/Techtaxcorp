@@ -72,23 +72,28 @@ export default function Contact() {
     mutationFn: async (data: ContactFormData) => {
       const serviceLabel = services.find(s => s.value === data.service)?.label || data.service;
       
-      const emailResult = await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: data.name,
-          from_email: data.email,
-          phone: data.phone || "Not provided",
-          company: data.company || "Not provided",
-          service: serviceLabel,
-          message: data.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
+      // Save to database first
       await apiRequest("POST", "/api/contact", data);
       
-      return emailResult;
+      // Then send email via EmailJS
+      try {
+        await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            from_name: data.name,
+            from_email: data.email,
+            phone: data.phone || "Not provided",
+            company: data.company || "Not provided",
+            service: serviceLabel,
+            message: data.message,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+      } catch (emailError) {
+        console.error("EmailJS error:", emailError);
+        // Continue even if email fails - data is saved to database
+      }
     },
     onSuccess: () => {
       setSubmitted(true);
@@ -97,7 +102,8 @@ export default function Contact() {
         description: "We'll get back to you within 24 hours.",
       });
     },
-    onError: () => {
+    onError: (error) => {
+      console.error("Form submission error:", error);
       toast({
         title: "Error",
         description: "Something went wrong. Please try again.",
