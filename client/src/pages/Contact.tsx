@@ -143,7 +143,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Phone</h3>
-                    <p className="text-muted-foreground">[Phone Number]</p>
+                    <p className="text-muted-foreground">Available upon request</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -210,7 +210,7 @@ export default function Contact() {
                               <FormItem>
                                 <FormLabel>Name *</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="John Doe" {...field} data-testid="input-name" />
+                                  <Input {...field} data-testid="input-name" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -225,7 +225,6 @@ export default function Contact() {
                                 <FormControl>
                                   <Input
                                     type="email"
-                                    placeholder="john@example.com"
                                     {...field}
                                     data-testid="input-email"
                                   />
@@ -246,7 +245,6 @@ export default function Contact() {
                                 <FormControl>
                                   <Input
                                     type="tel"
-                                    placeholder="(555) 123-4567"
                                     {...field}
                                     data-testid="input-phone"
                                   />
@@ -263,7 +261,6 @@ export default function Contact() {
                                 <FormLabel>Company</FormLabel>
                                 <FormControl>
                                   <Input
-                                    placeholder="Your Company"
                                     {...field}
                                     data-testid="input-company"
                                   />
@@ -283,7 +280,7 @@ export default function Contact() {
                               <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
                                   <SelectTrigger data-testid="select-service">
-                                    <SelectValue placeholder="Select a service" />
+                                    <SelectValue />
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
@@ -307,7 +304,6 @@ export default function Contact() {
                               <FormLabel>Message *</FormLabel>
                               <FormControl>
                                 <Textarea
-                                  placeholder="Tell us about your project or needs..."
                                   className="min-h-[120px]"
                                   {...field}
                                   data-testid="textarea-message"

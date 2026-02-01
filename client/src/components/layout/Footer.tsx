@@ -115,7 +115,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-muted-foreground mt-0.5" />
-                <span className="text-sm text-muted-foreground">[Phone Number]</span>
+                <span className="text-sm text-muted-foreground">Available upon request</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-muted-foreground mt-0.5" />
