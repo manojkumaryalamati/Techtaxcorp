@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { useSEO } from "@/hooks/use-seo";
+import heroBg from "@/assets/images/hero-bg.png";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -84,8 +85,13 @@ export default function About() {
 
   return (
     <Layout>
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-primary/5 via-background to-accent/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-16 sm:py-24">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <Badge variant="secondary" className="mb-4">About Us</Badge>
             <h1 className="font-serif text-4xl font-bold sm:text-5xl mb-6">
