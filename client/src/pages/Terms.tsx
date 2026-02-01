@@ -137,7 +137,7 @@ export default function Terms() {
             <p>
               Any disputes arising from these terms or our services will first be addressed through
               good faith negotiation. If unresolved, disputes will be settled through binding
-              arbitration in [City, State] in accordance with applicable arbitration rules.
+              arbitration in Texas, USA in accordance with applicable arbitration rules.
             </p>
 
             <h2>Changes to Terms</h2>
@@ -160,7 +160,7 @@ export default function Terms() {
             <p>
               <strong>Email:</strong> techtaxcorp@gmail.com
               <br />
-              <strong>Address:</strong> [City, State]
+              <strong>Address:</strong> Texas, USA
             </p>
           </div>
         </div>

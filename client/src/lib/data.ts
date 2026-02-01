@@ -227,7 +227,7 @@ export const faqs: FAQ[] = [
   },
   {
     question: "What areas do you serve?",
-    answer: "While we're based in [City, State], we serve clients nationwide. Our web services are fully remote, and our accounting services can be handled digitally for clients anywhere in the US.",
+    answer: "While we're based in Texas, USA, we serve clients nationwide. Our web services are fully remote, and our accounting services can be handled digitally for clients anywhere in the US.",
   },
   {
     question: "How do I get started?",
