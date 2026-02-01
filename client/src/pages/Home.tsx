@@ -15,20 +15,18 @@ import {
   Calculator,
   CheckCircle2,
   ArrowRight,
-  Star,
   Shield,
   Clock,
-  Users,
   Zap,
   Award,
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
-import { testimonials, faqs } from "@/lib/data";
+import { faqs } from "@/lib/data";
 
 const trustBadges = [
   { icon: Shield, text: "Secure & Confidential" },
   { icon: Clock, text: "Fast Turnaround" },
-  { icon: Users, text: "500+ Clients Served" },
+  { icon: Zap, text: "Expert Team" },
   { icon: Award, text: "5-Star Reviews" },
 ];
 
@@ -205,39 +203,6 @@ export default function Home() {
               </Button>
             </CardContent>
           </Card>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-24 border-b">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl font-bold sm:text-4xl">What Our Clients Say</h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what business owners like you have to say.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="hover-elevate">
-                <CardContent className="p-6">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-chart-4 text-chart-4" />
-                    ))}
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-4">
-                    "{testimonial.content}"
-                  </p>
-                  <div className="border-t pt-4">
-                    <p className="font-semibold text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-muted-foreground">
-                      {testimonial.role}, {testimonial.company}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 

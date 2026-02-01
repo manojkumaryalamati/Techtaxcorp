@@ -178,7 +178,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold">Location</h3>
                     <p className="text-muted-foreground">Texas, USA</p>
-                    <p className="text-sm text-muted-foreground">Serving clients nationwide</p>
+                    <p className="text-sm text-muted-foreground">Serving businesses nationwide</p>
                   </div>
                 </div>
               </div>
