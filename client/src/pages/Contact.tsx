@@ -210,7 +210,7 @@ export default function Contact() {
                               <FormItem>
                                 <FormLabel>Name *</FormLabel>
                                 <FormControl>
-                                  <Input {...field} data-testid="input-name" />
+                                  <Input placeholder="Enter your name" {...field} data-testid="input-name" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -225,6 +225,7 @@ export default function Contact() {
                                 <FormControl>
                                   <Input
                                     type="email"
+                                    placeholder="Enter your email"
                                     {...field}
                                     data-testid="input-email"
                                   />
@@ -245,6 +246,7 @@ export default function Contact() {
                                 <FormControl>
                                   <Input
                                     type="tel"
+                                    placeholder="Enter your phone number"
                                     {...field}
                                     data-testid="input-phone"
                                   />
@@ -261,6 +263,7 @@ export default function Contact() {
                                 <FormLabel>Company</FormLabel>
                                 <FormControl>
                                   <Input
+                                    placeholder="Enter your company name"
                                     {...field}
                                     data-testid="input-company"
                                   />
@@ -280,7 +283,7 @@ export default function Contact() {
                               <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
                                   <SelectTrigger data-testid="select-service">
-                                    <SelectValue />
+                                    <SelectValue placeholder="Select a service" />
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
@@ -304,6 +307,7 @@ export default function Contact() {
                               <FormLabel>Message *</FormLabel>
                               <FormControl>
                                 <Textarea
+                                  placeholder="Enter your message"
                                   className="min-h-[120px]"
                                   {...field}
                                   data-testid="textarea-message"
