@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useSEO } from "@/hooks/use-seo";
-import heroBg from "@/assets/images/hero-bg.png";
+import heroBg from "@/assets/images/hero-bg-optimized.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
