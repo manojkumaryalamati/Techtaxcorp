@@ -5,9 +5,11 @@ import path from "path";
 console.log("Building TechTaxCorp for Firebase Hosting...\n");
 
 console.log("Step 1: Building frontend with Vite...");
-execSync("npx vite build --config vite.config.firebase.ts", { stdio: "inherit" });
+execSync("cd client && npx vite build", { stdio: "inherit" });
+
 
 const distDir = path.resolve("dist/firebase");
+fs.mkdirSync(distDir, { recursive: true });
 
 console.log("\nStep 2: Generating robots.txt...");
 const robotsTxt = `User-agent: *
