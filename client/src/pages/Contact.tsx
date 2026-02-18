@@ -72,28 +72,27 @@ export default function Contact() {
     mutationFn: async (data: ContactFormData) => {
       const serviceLabel = services.find(s => s.value === data.service)?.label || data.service;
       
-      // Save to database first
-      await apiRequest("POST", "/api/contact", data);
-      
-      // Then send email via EmailJS
+      // Save to database if backend is available (Replit deployment)
       try {
-        await emailjs.send(
-          import.meta.env.VITE_EMAILJS_SERVICE_ID,
-          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          {
-            from_name: data.name,
-            from_email: data.email,
-            phone: data.phone || "Not provided",
-            company: data.company || "Not provided",
-            service: serviceLabel,
-            message: data.message,
-          },
-          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-        );
-      } catch (emailError) {
-        console.error("EmailJS error:", emailError);
-        // Continue even if email fails - data is saved to database
+        await apiRequest("POST", "/api/contact", data);
+      } catch (apiError) {
+        console.log("API not available (static hosting), continuing with EmailJS only");
       }
+      
+      // Send email via EmailJS
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          phone: data.phone || "Not provided",
+          company: data.company || "Not provided",
+          service: serviceLabel,
+          message: data.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
     },
     onSuccess: () => {
       setSubmitted(true);
