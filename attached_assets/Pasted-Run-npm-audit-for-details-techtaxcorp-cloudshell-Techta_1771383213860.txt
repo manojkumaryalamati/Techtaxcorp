@@ -1,0 +1,41 @@
+Run `npm audit` for details.
+techtaxcorp@cloudshell:~/Techtaxcorp (techtaxcorp-b36a1)$ npx tsx scripts/build-firebase.ts
+Building TechTaxCorp for Firebase Hosting...
+
+Step 1: Building frontend with Vite...
+✘ [ERROR] Could not resolve "/home/techtaxcorp/Techtaxcorp/vite.config.firebase.ts"
+
+failed to load config from /home/techtaxcorp/Techtaxcorp/vite.config.firebase.ts
+error during build:
+Error: Build failed with 1 error:
+error: Could not resolve "/home/techtaxcorp/Techtaxcorp/vite.config.firebase.ts"
+    at failureErrorWithLog (/home/techtaxcorp/Techtaxcorp/node_modules/vite/node_modules/esbuild/lib/main.js:1467:15)
+    at /home/techtaxcorp/Techtaxcorp/node_modules/vite/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/home/techtaxcorp/Techtaxcorp/node_modules/vite/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/home/techtaxcorp/Techtaxcorp/node_modules/vite/node_modules/esbuild/lib/main.js:924:7)
+    at /home/techtaxcorp/Techtaxcorp/node_modules/vite/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/home/techtaxcorp/Techtaxcorp/node_modules/vite/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/home/techtaxcorp/Techtaxcorp/node_modules/vite/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/home/techtaxcorp/Techtaxcorp/node_modules/vite/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+node:internal/errors:985
+  const err = new Error(message);
+              ^
+
+Error: Command failed: npx vite build --config vite.config.firebase.ts
+    at genericNodeError (node:internal/errors:985:15)
+    at wrappedFn (node:internal/errors:539:14)
+    at checkExecSyncError (node:child_process:925:11)
+    at execSync (node:child_process:997:15)
+    at <anonymous> (/home/techtaxcorp/Techtaxcorp/scripts/build-firebase.ts:8:1)
+    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  status: 1,
+  signal: null,
+  output: [ null, null, null ],
+  pid: 3265,
+  stdout: null,
+  stderr: null
+}
