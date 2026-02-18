@@ -6,6 +6,7 @@ const rootDir = process.cwd();
 
 export default defineConfig({
   plugins: [react()],
+  base: "/",
   define: {
     "import.meta.env.VITE_STATIC_HOSTING": JSON.stringify("true"),
   },
@@ -18,7 +19,7 @@ export default defineConfig({
   },
   root: path.resolve(rootDir, "client"),
   build: {
-    outDir: path.resolve(rootDir, "dist/firebase"),
+    outDir: path.resolve(rootDir, "client", "dist"),
     emptyOutDir: true,
   },
 });
