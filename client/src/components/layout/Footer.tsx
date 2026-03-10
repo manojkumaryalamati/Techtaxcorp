@@ -31,7 +31,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2" data-testid="link-logo-footer">
-              <img src={logoImage} alt="TechTaxCorp" className="w-56 h-auto" />
+              <img src={logoImage} alt="TechTaxCorp" className="h-20 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               Your trusted partner for professional website design and comprehensive accounting services.
