@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { SiFacebook, SiLinkedin, SiX } from "react-icons/si";
+import logoImage from "@assets/logo.png";
 
 const footerLinks = {
   services: [
@@ -29,11 +30,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary">
-                <span className="font-serif text-xl font-bold text-primary-foreground">T</span>
-              </div>
-              <span className="font-serif text-xl font-bold">TechTaxCorp</span>
+            <Link href="/" className="flex items-center gap-2" data-testid="link-logo-footer">
+              <img src={logoImage} alt="TechTaxCorp" className="h-10 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               Your trusted partner for professional website design and comprehensive accounting services.
