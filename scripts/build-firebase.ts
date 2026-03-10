@@ -5,11 +5,9 @@ import path from "path";
 console.log("Building TechTaxCorp for Firebase Hosting...\n");
 
 console.log("Step 1: Building frontend with Vite...");
-execSync("cd client && npx vite build", { stdio: "inherit" });
+execSync("npx vite build --config vite.config.firebase.ts", { stdio: "inherit" });
 
-
-const distDir = path.resolve("dist/firebase");
-fs.mkdirSync(distDir, { recursive: true });
+const distDir = path.resolve("client/dist");
 
 console.log("\nStep 2: Generating robots.txt...");
 const robotsTxt = `User-agent: *
@@ -50,6 +48,6 @@ ${pages.map((page) => `  <url>
 </urlset>`;
 fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemap);
 
-console.log("\nBuild complete! Files ready in dist/firebase/");
+console.log("\nBuild complete! Files ready in client/dist/");
 console.log("\nTo deploy, run:");
 console.log("  npx firebase deploy --only hosting");
