@@ -38,7 +38,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2" data-testid="link-logo-header">
-          <img src={logoImage} alt="TechTaxCorp" className="h-12 sm:h-14 w-auto" />
+          <img src={logoImage} alt="TechTaxCorp" className="w-44 sm:w-52 h-auto max-h-12" style={{ objectFit: "contain" }} />
         </Link>
 
         <div className="hidden lg:flex lg:items-center lg:gap-1">
@@ -105,7 +105,7 @@ export function Header() {
           <SheetContent side="right" className="w-full max-w-sm">
             <div className="flex flex-col gap-4 py-4">
               <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)} data-testid="link-logo-mobile">
-                <img src={logoImage} alt="TechTaxCorp" className="h-12 w-auto" />
+                <img src={logoImage} alt="TechTaxCorp" className="w-44 h-auto max-h-12" style={{ objectFit: "contain" }} />
               </Link>
               <nav className="flex flex-col gap-1 py-4">
                 {navigation.map((item) => (
