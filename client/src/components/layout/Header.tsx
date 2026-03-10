@@ -11,7 +11,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import logoImage from "@assets/logo.png";
+import { Logo } from "@/components/Logo";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -38,7 +38,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex-shrink-0" data-testid="link-logo-header">
-          <img src={logoImage} alt="TechTaxCorp" className="h-14 w-auto" />
+          <Logo iconSize={42} textClassName="text-xl" />
         </Link>
 
         <div className="hidden lg:flex lg:items-center lg:gap-1">
@@ -105,7 +105,7 @@ export function Header() {
           <SheetContent side="right" className="w-full max-w-sm">
             <div className="flex flex-col gap-4 py-4">
               <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)} data-testid="link-logo-mobile">
-                <img src={logoImage} alt="TechTaxCorp" className="h-14 w-auto" />
+                <Logo iconSize={38} textClassName="text-lg" />
               </Link>
               <nav className="flex flex-col gap-1 py-4">
                 {navigation.map((item) => (
