@@ -31,7 +31,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2" data-testid="link-logo-footer">
-              <Logo iconSize={48} textClassName="text-2xl" />
+              <Logo size="lg" />
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
               Your trusted partner for professional website design and comprehensive accounting services.
