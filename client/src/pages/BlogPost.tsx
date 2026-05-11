@@ -5,7 +5,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_ORIGIN } from "@/lib/seo-constants";
 import { blogPosts } from "@/lib/data";
+
+const orgId = `${SITE_ORIGIN}/#organization`;
 
 const categoryColors: Record<string, string> = {
   accounting: "bg-chart-2/10 text-chart-2",
@@ -18,10 +22,22 @@ export default function BlogPost() {
   const slug = params.slug;
   const post = blogPosts.find((p) => p.slug === slug);
 
-  useSEO({
-    title: post?.title || "Blog Post",
-    description: post?.excerpt || "Read this article from TechTaxCorp.",
-  });
+  useSEO(
+    post
+      ? {
+          title: `${post.title} | TechTaxCorp Blog`,
+          description: post.excerpt,
+          canonicalPath: `/blog/${post.slug}`,
+          ogType: "article",
+          keywords: [post.category, "TechTaxCorp", "business software", "ledger software"],
+        }
+      : {
+          title: "Article not found | TechTaxCorp Blog",
+          description: "The requested article could not be found on the TechTaxCorp blog.",
+          canonicalPath: "/blog",
+          robots: "noindex, follow",
+        }
+  );
 
   if (!post) {
     return (
@@ -43,8 +59,28 @@ export default function BlogPost() {
     .filter((p) => p.slug !== slug && p.category === post.category)
     .slice(0, 2);
 
+  const blogPostingLd = {
+    "@type": "BlogPosting",
+    headline: post.title,
+    datePublished: post.date,
+    author: { "@type": "Person", name: post.author },
+    description: post.excerpt,
+    url: `${SITE_ORIGIN}/blog/${post.slug}`,
+    publisher: { "@id": orgId },
+    mainEntityOfPage: `${SITE_ORIGIN}/blog/${post.slug}`,
+  };
+  const breadcrumbLd = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_ORIGIN },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_ORIGIN}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: `${SITE_ORIGIN}/blog/${post.slug}` },
+    ],
+  };
+
   return (
     <Layout>
+      <JsonLd data={[blogPostingLd, breadcrumbLd]} />
       <article className="py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Link
@@ -84,16 +120,16 @@ export default function BlogPost() {
             {post.content.split("\n").map((paragraph, index) => {
               if (paragraph.startsWith("# ")) {
                 return (
-                  <h1 key={index} className="font-serif text-3xl font-bold mt-8 mb-4">
+                  <h2 key={index} className="font-serif text-2xl font-bold mt-10 mb-4">
                     {paragraph.slice(2)}
-                  </h1>
+                  </h2>
                 );
               }
               if (paragraph.startsWith("## ")) {
                 return (
-                  <h2 key={index} className="font-serif text-2xl font-bold mt-8 mb-4">
+                  <h3 key={index} className="font-serif text-xl font-bold mt-8 mb-3">
                     {paragraph.slice(3)}
-                  </h2>
+                  </h3>
                 );
               }
               if (paragraph.startsWith("---")) {

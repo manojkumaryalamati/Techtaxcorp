@@ -3,9 +3,12 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { SiteWideJsonLd } from "@/components/seo/SiteWideJsonLd";
 import { lazy, Suspense } from "react";
 
 const Home = lazy(() => import("@/pages/Home"));
+const VahanBooks = lazy(() => import("@/pages/VahanBooks"));
+const MySiteWorks = lazy(() => import("@/pages/MySiteWorks"));
 const Services = lazy(() => import("@/pages/Services"));
 const ServicesWebsites = lazy(() => import("@/pages/ServicesWebsites"));
 const ServicesAccounting = lazy(() => import("@/pages/ServicesAccounting"));
@@ -30,6 +33,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/vahanbooks" component={VahanBooks} />
+      <Route path="/mysiteworks" component={MySiteWorks} />
       <Route path="/services" component={Services} />
       <Route path="/services/websites" component={ServicesWebsites} />
       <Route path="/services/accounting" component={ServicesAccounting} />
@@ -49,6 +54,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <SiteWideJsonLd />
         <Toaster />
         <Suspense fallback={<PageLoader />}>
           <Router />

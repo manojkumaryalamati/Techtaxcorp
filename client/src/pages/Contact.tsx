@@ -32,24 +32,36 @@ import { contactFormSchema, type ContactFormData } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 
 const services = [
-  { value: "website-business", label: "Business Website" },
-  { value: "website-personal", label: "Personal Website" },
-  { value: "website-portfolio", label: "Portfolio Site" },
-  { value: "website-landing", label: "Landing Page" },
-  { value: "website-maintenance", label: "Website Maintenance" },
-  { value: "accounting-bookkeeping", label: "Bookkeeping" },
-  { value: "accounting-tax", label: "Tax Preparation" },
-  { value: "accounting-business", label: "Business Accounting" },
-  { value: "accounting-payroll", label: "Payroll Services" },
-  { value: "accounting-advisory", label: "Financial Advisory" },
-  { value: "bundle", label: "Website + Accounting Bundle" },
-  { value: "other", label: "Other / Not Sure" },
+  { value: "product-vahanbooks", label: "VahanBooks (transport / fleet software)" },
+  { value: "product-mysiteworks", label: "MySiteWorks (construction software)" },
+  { value: "custom-web-app", label: "Custom web application" },
+  { value: "mobile-app", label: "Mobile app (iOS / Android)" },
+  { value: "dashboard", label: "Business dashboard & reporting" },
+  { value: "ledger-khata", label: "Ledger / khata style software" },
+  { value: "website-business", label: "Marketing / company website" },
+  { value: "website-landing", label: "Landing page or microsite" },
+  { value: "automation", label: "Automation & integrations" },
+  { value: "admin-portal", label: "Admin panel or partner portal" },
+  { value: "digital-marketing", label: "Digital marketing support" },
+  { value: "other", label: "Other / not sure yet" },
 ];
+
+function initialServiceFromUrl(): string {
+  if (typeof window === "undefined") return "";
+  const interest = new URLSearchParams(window.location.search).get("interest");
+  if (interest === "vahanbooks") return "product-vahanbooks";
+  if (interest === "mysiteworks") return "product-mysiteworks";
+  if (interest === "custom") return "custom-web-app";
+  return "";
+}
 
 export default function Contact() {
   useSEO({
-    title: "Contact Us - Get in Touch",
-    description: "Contact TechTaxCorp for website design and accounting services. Request a free consultation, get a quote, or book a call. Email: techtaxcorp@gmail.com",
+    title: "Contact TechTaxCorp | Custom Software, Apps & Websites",
+    description:
+      "Contact TechTaxCorp about VahanBooks, MySiteWorks, ledger software, or custom development—web applications, mobile apps, dashboards, and websites. Email: techtaxcorp@gmail.com",
+    canonicalPath: "/contact",
+    keywords: ["contact TechTaxCorp", "custom software quote", "VahanBooks contact", "MySiteWorks contact", "ledger software development"],
   });
 
   const { toast } = useToast();
@@ -62,7 +74,7 @@ export default function Contact() {
       email: "",
       phone: "",
       company: "",
-      service: "",
+      service: initialServiceFromUrl(),
       message: "",
       honeypot: "",
     },

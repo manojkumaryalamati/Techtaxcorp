@@ -113,8 +113,11 @@ const process = [
 
 export default function ServicesWebsites() {
   useSEO({
-    title: "Web Design & Development Services",
-    description: "Professional website design services for businesses and individuals. Custom business websites, personal sites, portfolios, and landing pages that convert visitors into customers.",
+    title: "Website Design & Development | TechTaxCorp",
+    description:
+      "Professional website design and development from TechTaxCorp—business sites, portfolios, landing pages, and SEO-friendly builds that support your software and services story.",
+    canonicalPath: "/services/websites",
+    keywords: ["website design", "web development", "TechTaxCorp", "business website", "landing pages"],
   });
 
   return (

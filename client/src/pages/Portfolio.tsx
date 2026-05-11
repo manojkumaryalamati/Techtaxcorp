@@ -10,8 +10,11 @@ import { portfolioProjects } from "@/lib/data";
 
 export default function Portfolio() {
   useSEO({
-    title: "Portfolio - Our Work",
-    description: "View our portfolio of website design projects. See examples of business websites, restaurant sites, fitness studios, and more that we've created for our clients.",
+    title: "Portfolio | TechTaxCorp Websites & Software Projects",
+    description:
+      "Explore selected website and software work from TechTaxCorp—business sites, product marketing pages, and interfaces aligned with our ledger and operations software practice.",
+    canonicalPath: "/portfolio",
+    keywords: ["TechTaxCorp portfolio", "website design", "business software projects"],
   });
 
   return (
@@ -36,17 +39,23 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-16 sm:py-24" aria-labelledby="portfolio-projects-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 id="portfolio-projects-heading" className="sr-only">
+            Selected website and software project previews
+          </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {portfolioProjects.map((project) => (
               <Card key={project.id} className="group overflow-hidden hover-elevate">
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} — website project preview by TechTaxCorp`}
+                    width={640}
+                    height={360}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <CardContent className="p-6">

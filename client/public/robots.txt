@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# APIs and non-public app surfaces (if exposed)
+Disallow: /api/
+
+Sitemap: https://techtaxcorp.com/sitemap.xml

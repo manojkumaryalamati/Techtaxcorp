@@ -16,8 +16,11 @@ const categoryColors: Record<string, string> = {
 
 export default function Blog() {
   useSEO({
-    title: "Blog - Insights & Resources",
-    description: "Expert tips on small business accounting, website design, tax strategies, and more. Practical advice to help your business grow and succeed.",
+    title: "TechTaxCorp Blog | Software, Products & Business Operations",
+    description:
+      "Articles from TechTaxCorp on ledger software, transport and construction operations, product updates for VahanBooks and MySiteWorks, websites, and custom application development.",
+    canonicalPath: "/blog",
+    keywords: ["TechTaxCorp blog", "business software", "VahanBooks", "MySiteWorks", "ledger software"],
   });
 
   return (

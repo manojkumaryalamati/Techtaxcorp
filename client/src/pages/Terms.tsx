@@ -4,8 +4,11 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Terms() {
   useSEO({
-    title: "Terms of Service",
-    description: "TechTaxCorp terms of service. Read our service agreement, payment terms, and client responsibilities.",
+    title: "Terms of Service | TechTaxCorp",
+    description:
+      "TechTaxCorp terms of service—service agreement, payment terms, client responsibilities, and policies for websites, software, and accounting-related offerings.",
+    canonicalPath: "/terms",
+    robots: "index, follow",
   });
 
   return (

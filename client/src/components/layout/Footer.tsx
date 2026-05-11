@@ -1,26 +1,21 @@
 import { Link } from "wouter";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { TechTaxCorpLogo } from "@/components/brand/TechTaxCorpLogo";
 import { SiFacebook, SiLinkedin, SiX } from "react-icons/si";
-import { Logo } from "@/components/Logo";
 
-const footerLinks = {
-  services: [
-    { name: "Web Design", href: "/services/websites" },
-    { name: "Accounting", href: "/services/accounting" },
-    { name: "Tax Preparation", href: "/services/accounting" },
-    { name: "Bookkeeping", href: "/services/accounting" },
-  ],
-  company: [
-    { name: "About Us", href: "/about" },
-    { name: "Portfolio", href: "/portfolio" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
-  ],
-  legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-  ],
-};
+const primaryLinks = [
+  { name: "Products", href: "/#products" },
+  { name: "Services", href: "/services" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+  { name: "VahanBooks", href: "/vahanbooks" },
+  { name: "MySiteWorks", href: "/mysiteworks" },
+];
+
+const legalLinks = [
+  { name: "Privacy Policy", href: "/privacy" },
+  { name: "Terms of Service", href: "/terms" },
+];
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,13 +23,16 @@ export function Footer() {
   return (
     <footer className="border-t bg-card">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2" data-testid="link-logo-footer">
-              <Logo size="lg" />
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          <div className="space-y-4 lg:col-span-5">
+            <Link
+              href="/"
+              className="inline-flex w-fit rounded-md py-1 ring-offset-background transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            >
+              <TechTaxCorpLogo variant="footer" />
             </Link>
-            <p className="text-sm text-muted-foreground max-w-xs">
-              Your trusted partner for professional website design and comprehensive accounting services.
+            <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
+              TechTaxCorp — A software company building simple business apps for modern businesses.
             </p>
             <div className="flex gap-3">
               <a
@@ -64,10 +62,10 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Services</h3>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
+          <div className="lg:col-span-4">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">Explore</h3>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-2">
+              {primaryLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -81,28 +79,11 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Company</h3>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Contact</h3>
+          <div className="lg:col-span-3">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-muted-foreground mt-0.5" />
+                <Mail className="h-5 w-5 text-muted-foreground mt-0.5 shrink-0" aria-hidden />
                 <a
                   href="mailto:techtaxcorp@gmail.com"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -112,11 +93,11 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-muted-foreground mt-0.5" />
+                <Phone className="h-5 w-5 text-muted-foreground mt-0.5 shrink-0" aria-hidden />
                 <span className="text-sm text-muted-foreground">Available upon request</span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-muted-foreground mt-0.5" />
+                <MapPin className="h-5 w-5 text-muted-foreground mt-0.5 shrink-0" aria-hidden />
                 <span className="text-sm text-muted-foreground">Texas, USA</span>
               </li>
             </ul>
@@ -127,8 +108,8 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             &copy; {currentYear} TechTaxCorp. All rights reserved.
           </p>
-          <div className="flex gap-4">
-            {footerLinks.legal.map((link) => (
+          <div className="flex flex-wrap justify-center gap-4">
+            {legalLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}

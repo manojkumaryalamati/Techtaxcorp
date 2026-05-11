@@ -113,8 +113,11 @@ const whyChooseUs = [
 
 export default function ServicesAccounting() {
   useSEO({
-    title: "Accounting & Tax Services",
-    description: "Expert bookkeeping, tax preparation, business accounting, and financial consulting for small businesses and individuals. Maximize deductions and stay compliant.",
+    title: "Accounting & Tax Services | TechTaxCorp",
+    description:
+      "Bookkeeping, tax preparation, payroll support, and financial consulting from TechTaxCorp—alongside our software and website services for small businesses and individuals.",
+    canonicalPath: "/services/accounting",
+    keywords: ["TechTaxCorp accounting", "bookkeeping", "tax preparation", "small business accounting"],
   });
 
   return (

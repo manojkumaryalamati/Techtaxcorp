@@ -4,8 +4,10 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Privacy() {
   useSEO({
-    title: "Privacy Policy",
-    description: "TechTaxCorp privacy policy. Learn how we collect, use, and protect your personal information.",
+    title: "Privacy Policy | TechTaxCorp",
+    description: "TechTaxCorp privacy policy—how we collect, use, store, and protect personal information when you use our website and services.",
+    canonicalPath: "/privacy",
+    robots: "index, follow",
   });
 
   return (
