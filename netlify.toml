@@ -1,7 +1,11 @@
+# Netlify: `npm run build` → Vite outputs to `client/dist`.
+# If the Netlify dashboard has a custom "Build command", remove it or point it here;
+# otherwise an old override like `vite build --config vite.config.netlify.ts` is fine
+# now that `vite.config.netlify.ts` exists in the repo.
 [build]
   base = "."
-  publish = "dist/public"
-  command = "npx vite build --config vite.config.netlify.ts"
+  publish = "client/dist"
+  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "20"
