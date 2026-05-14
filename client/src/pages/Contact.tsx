@@ -32,24 +32,35 @@ import { contactFormSchema, type ContactFormData } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 
 const services = [
-  { value: "website-business", label: "Business Website" },
-  { value: "website-personal", label: "Personal Website" },
-  { value: "website-portfolio", label: "Portfolio Site" },
-  { value: "website-landing", label: "Landing Page" },
-  { value: "website-maintenance", label: "Website Maintenance" },
-  { value: "accounting-bookkeeping", label: "Bookkeeping" },
-  { value: "accounting-tax", label: "Tax Preparation" },
-  { value: "accounting-business", label: "Business Accounting" },
-  { value: "accounting-payroll", label: "Payroll Services" },
-  { value: "accounting-advisory", label: "Financial Advisory" },
-  { value: "bundle", label: "Website + Accounting Bundle" },
-  { value: "other", label: "Other / Not Sure" },
+  { value: "product-vahanbooks", label: "VahanBooks (transport / fleet software)" },
+  { value: "product-mysiteworks", label: "MySiteWorks (construction software)" },
+  { value: "custom-web-app", label: "Custom web application" },
+  { value: "mobile-app", label: "Mobile app (iOS / Android)" },
+  { value: "dashboard", label: "Business dashboard & reporting" },
+  { value: "ledger-khata", label: "Ledger / khata style software" },
+  { value: "website-business", label: "Marketing / company website" },
+  { value: "website-landing", label: "Landing page or microsite" },
+  { value: "automation", label: "Automation & integrations" },
+  { value: "admin-portal", label: "Admin panel or partner portal" },
+  { value: "digital-marketing", label: "Digital marketing support" },
+  { value: "other", label: "Other / not sure yet" },
 ];
+
+function initialServiceFromUrl(): string {
+  if (typeof window === "undefined") return "";
+  const interest = new URLSearchParams(window.location.search).get("interest");
+  if (interest === "vahanbooks") return "product-vahanbooks";
+  if (interest === "mysiteworks") return "product-mysiteworks";
+  if (interest === "custom") return "custom-web-app";
+  return "";
+}
 
 export default function Contact() {
   useSEO({
-    title: "Contact Us - Get in Touch",
-    description: "Contact TechTaxCorp for website design and accounting services. Request a free consultation, get a quote, or book a call. Email: techtaxcorp@gmail.com",
+    title: "Contact TechTaxCorp | Custom Software, Apps & Websites",
+    description: "Contact TechTaxCorp about VahanBooks, MySiteWorks, ledger software, or custom development—web applications, mobile apps, dashboards, and websites. Email: techtaxcorp@gmail.com",
+    canonicalPath: "/contact",
+    keywords: ["contact TechTaxCorp", "custom software quote", "VahanBooks contact", "MySiteWorks contact", "ledger software development"],
   });
 
   const { toast } = useToast();
@@ -62,7 +73,7 @@ export default function Contact() {
       email: "",
       phone: "",
       company: "",
-      service: "",
+      service: initialServiceFromUrl(),
       message: "",
       honeypot: "",
     },
@@ -71,15 +82,13 @@ export default function Contact() {
   const mutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
       const serviceLabel = services.find(s => s.value === data.service)?.label || data.service;
-      
-      // Save to database if backend is available (Replit deployment)
+
       try {
         await apiRequest("POST", "/api/contact", data);
       } catch (apiError) {
         console.log("API not available (static hosting), continuing with EmailJS only");
       }
-      
-      // Send email via EmailJS
+
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -96,25 +105,16 @@ export default function Contact() {
     },
     onSuccess: () => {
       setSubmitted(true);
-      toast({
-        title: "Message Sent!",
-        description: "We'll get back to you within 24 hours.",
-      });
+      toast({ title: "Message Sent!", description: "We'll get back to you within 24 hours." });
     },
     onError: (error) => {
       console.error("Form submission error:", error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
+      toast({ title: "Error", description: "Something went wrong. Please try again.", variant: "destructive" });
     },
   });
 
   const onSubmit = (data: ContactFormData) => {
-    if (data.honeypot) {
-      return;
-    }
+    if (data.honeypot) return;
     mutation.mutate(data);
   };
 
@@ -124,12 +124,9 @@ export default function Contact() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <Badge variant="secondary" className="mb-4">Contact Us</Badge>
-            <h1 className="font-serif text-4xl font-bold sm:text-5xl mb-6">
-              Let's Start a Conversation
-            </h1>
+            <h1 className="font-serif text-4xl font-bold sm:text-5xl mb-6">Let's Start a Conversation</h1>
             <p className="text-lg text-muted-foreground">
-              Ready to elevate your online presence or streamline your finances? Get in touch and
-              let's discuss how we can help your business grow.
+              Ready to elevate your online presence or streamline your finances? Get in touch and let's discuss how we can help your business grow.
             </p>
           </div>
         </div>
@@ -141,8 +138,7 @@ export default function Contact() {
             <div>
               <h2 className="font-serif text-2xl font-bold mb-6">Get in Touch</h2>
               <p className="text-muted-foreground mb-8">
-                Fill out the form and we'll get back to you within 24 hours. Or reach out directly
-                using the contact information below.
+                Fill out the form and we'll get back to you within 24 hours. Or reach out directly using the contact information below.
               </p>
 
               <div className="space-y-6 mb-8">
@@ -152,11 +148,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <a
-                      href="mailto:techtaxcorp@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      data-testid="link-email"
-                    >
+                    <a href="mailto:techtaxcorp@gmail.com" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-email">
                       techtaxcorp@gmail.com
                     </a>
                   </div>
@@ -189,15 +181,10 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold mb-2">Book a Consultation</h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        Prefer to schedule a specific time? Use our online calendar to book a free
-                        30-minute consultation.
+                        Prefer to schedule a specific time? Use our online calendar to book a free 30-minute consultation.
                       </p>
                       <Button asChild data-testid="button-book-calendly">
-                        <a
-                          href={import.meta.env.VITE_CALENDLY_URL || "#calendly-placeholder"}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <a href={import.meta.env.VITE_CALENDLY_URL || "#calendly-placeholder"} target="_blank" rel="noopener noreferrer">
                           Book a Time
                         </a>
                       </Button>
@@ -213,9 +200,7 @@ export default function Contact() {
                   <CardContent className="p-8 text-center">
                     <CheckCircle2 className="h-16 w-16 text-chart-2 mx-auto mb-4" />
                     <h3 className="font-serif text-2xl font-bold mb-2">Thank You!</h3>
-                    <p className="text-muted-foreground mb-6">
-                      Your message has been received. We'll get back to you within 24 hours.
-                    </p>
+                    <p className="text-muted-foreground mb-6">Your message has been received. We'll get back to you within 24 hours.</p>
                     <Button variant="outline" onClick={() => setSubmitted(false)} data-testid="button-send-another">
                       Send Another Message
                     </Button>
@@ -247,12 +232,7 @@ export default function Contact() {
                               <FormItem>
                                 <FormLabel>Email *</FormLabel>
                                 <FormControl>
-                                  <Input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    {...field}
-                                    data-testid="input-email"
-                                  />
+                                  <Input type="email" placeholder="Enter your email" {...field} data-testid="input-email" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -268,12 +248,7 @@ export default function Contact() {
                               <FormItem>
                                 <FormLabel>Phone</FormLabel>
                                 <FormControl>
-                                  <Input
-                                    type="tel"
-                                    placeholder="Enter your phone number"
-                                    {...field}
-                                    data-testid="input-phone"
-                                  />
+                                  <Input type="tel" placeholder="Enter your phone number" {...field} data-testid="input-phone" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -286,11 +261,7 @@ export default function Contact() {
                               <FormItem>
                                 <FormLabel>Company</FormLabel>
                                 <FormControl>
-                                  <Input
-                                    placeholder="Enter your company name"
-                                    {...field}
-                                    data-testid="input-company"
-                                  />
+                                  <Input placeholder="Enter your company name" {...field} data-testid="input-company" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -330,12 +301,7 @@ export default function Contact() {
                             <FormItem>
                               <FormLabel>Message *</FormLabel>
                               <FormControl>
-                                <Textarea
-                                  placeholder="Enter your message"
-                                  className="min-h-[120px]"
-                                  {...field}
-                                  data-testid="textarea-message"
-                                />
+                                <Textarea placeholder="Enter your message" className="min-h-[120px]" {...field} data-testid="textarea-message" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -356,12 +322,7 @@ export default function Contact() {
                           />
                         </div>
 
-                        <Button
-                          type="submit"
-                          className="w-full"
-                          disabled={mutation.isPending}
-                          data-testid="button-submit-contact"
-                        >
+                        <Button type="submit" className="w-full" disabled={mutation.isPending} data-testid="button-submit-contact">
                           {mutation.isPending ? (
                             <>
                               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -383,12 +344,9 @@ export default function Contact() {
 
       <section className="py-16 sm:py-24 bg-primary text-primary-foreground">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl font-bold sm:text-4xl mb-4">
-            Free Consultation Included
-          </h2>
+          <h2 className="font-serif text-3xl font-bold sm:text-4xl mb-4">Free Consultation Included</h2>
           <p className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
-            Every inquiry includes a free consultation where we'll discuss your needs and provide
-            a customized recommendation. No pressure, no obligation.
+            Every inquiry includes a free consultation where we'll discuss your needs and provide a customized recommendation. No pressure, no obligation.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" variant="secondary" asChild data-testid="button-view-services-contact">

@@ -6,158 +6,160 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Globe, Calculator, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { softwareServiceSections } from "@/lib/services-seo-content";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_ORIGIN } from "@/lib/seo-constants";
+
+const orgId = `${SITE_ORIGIN}/#organization`;
 
 export default function Services() {
   useSEO({
-    title: "Our Services - Web Design & Accounting",
-    description: "TechTaxCorp offers website design, development, bookkeeping, tax preparation, and financial consulting services for small businesses and individuals.",
+    title: "TechTaxCorp Services | Web Apps, Mobile Apps, Ledger & SaaS Development",
+    description:
+      "TechTaxCorp provides custom web application development, mobile app development, ledger software, business software, website design, digital marketing support, and SaaS product development—plus accounting services.",
+    canonicalPath: "/services",
+    keywords: [
+      "custom web application development",
+      "mobile app development company",
+      "ledger software development",
+      "business software development",
+      "SaaS product development",
+      "website design and development",
+      "digital marketing support",
+      "TechTaxCorp services",
+    ],
   });
+
+  const serviceSchemas = softwareServiceSections.map((s) => ({
+    "@type": "Service",
+    name: s.heading,
+    description: s.intro,
+    url: `${SITE_ORIGIN}/services#${s.id}`,
+    provider: { "@type": "Organization", "@id": orgId },
+    areaServed: { "@type": "Place", name: "Worldwide" },
+  }));
 
   return (
     <Layout>
-      <section className="relative overflow-hidden py-16 sm:py-24">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
+      <JsonLd data={serviceSchemas} />
+
+      <section className="relative overflow-hidden py-16 sm:py-24" aria-labelledby="services-hero-heading">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroBg})` }} />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <Badge variant="secondary" className="mb-4">Our Services</Badge>
-            <h1 className="font-serif text-4xl font-bold sm:text-5xl mb-6">
-              Complete Business Solutions
+          <div className="mx-auto max-w-3xl text-center">
+            <Badge variant="secondary" className="mb-4">Services</Badge>
+            <h1 id="services-hero-heading" className="mb-6 font-serif text-4xl font-bold sm:text-5xl">
+              Business software, web &amp; mobile development from TechTaxCorp
             </h1>
             <p className="text-lg text-muted-foreground">
-              From stunning websites to expert accounting, we provide the essential services your
-              business needs to succeed in today's competitive market.
+              TechTaxCorp designs and develops ledger software, SaaS products like VahanBooks and MySiteWorks, custom
+              applications, and modern websites—then helps you ship improvements as usage grows. We also offer
+              accounting and tax support for clients who need it.
             </p>
+            <Button className="mt-8 rounded-full" size="lg" asChild>
+              <Link href="/contact">
+                Discuss your project
+                <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 border-b">
+      <section className="border-b py-12 sm:py-16" aria-label="Software development services">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
-            <div>
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary mb-6">
-                <Globe className="h-7 w-7 text-primary-foreground" />
-              </div>
-              <h2 className="font-serif text-3xl font-bold mb-4">Web Design & Development</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Your website is your digital storefront. We create beautiful, fast, and
-                conversion-optimized websites that help your business stand out and attract customers.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Business Websites - Professional sites for companies of all sizes",
-                  "Personal Websites - Showcase your personal brand and expertise",
-                  "Portfolio Sites - Display your work in a stunning gallery format",
-                  "Landing Pages - High-converting pages for campaigns and offers",
-                  "Website Maintenance - Keep your site secure and up-to-date",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button asChild data-testid="button-explore-websites">
-                <Link href="/services/websites">
-                  Explore Web Services <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-            <div className="grid gap-4">
-              <Card className="border-primary/20 bg-primary/5">
+          <p className="max-w-3xl font-serif text-xl font-semibold text-foreground sm:text-2xl">
+            Software and application services
+          </p>
+          <p className="mt-3 max-w-3xl text-muted-foreground">
+            Each engagement starts with how work really happens—then we design a focused system your team can adopt
+            quickly. Explore the categories below and{" "}
+            <Link href="/contact" className="font-semibold text-primary underline-offset-4 hover:underline">
+              contact TechTaxCorp
+            </Link>{" "}
+            for a roadmap and estimate.
+          </p>
+
+          <div className="mt-10 grid gap-8 sm:mt-12 md:grid-cols-2 lg:grid-cols-3">
+            {softwareServiceSections.map((s) => (
+              <Card key={s.id} id={s.id} className="scroll-mt-24 border-border/60">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">Custom Design</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Every website we create is custom-designed to match your brand and business goals.
-                    No templates, no cookie-cutter solutions.
-                  </p>
+                  <h2 className="font-serif text-lg font-bold">{s.heading}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.intro}</p>
+                  <ul className="mt-4 space-y-2">
+                    {s.benefits.map((b) => (
+                      <li key={b} className="flex items-start gap-2 text-sm">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
-              <Card className="border-primary/20 bg-primary/5">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">Mobile-First Approach</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Over 60% of web traffic comes from mobile devices. We ensure your site looks and
-                    works perfectly on every screen size.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-primary/20 bg-primary/5">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">SEO Optimized</h3>
-                  <p className="text-sm text-muted-foreground">
-                    We build websites that search engines love. Proper structure, fast loading, and
-                    optimized content help you rank higher.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-accent/30">
+      <section className="py-16 sm:py-24" aria-label="Accounting and tax services">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
-            <div className="order-2 lg:order-1 grid gap-4">
-              <Card className="border-chart-2/20 bg-chart-2/5">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">Accurate Records</h3>
-                  <p className="text-sm text-muted-foreground">
-                    We maintain meticulous financial records so you always know where your business
-                    stands financially.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-chart-2/20 bg-chart-2/5">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">Tax Savings</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our tax professionals know the code inside and out. We find every legitimate
-                    deduction to minimize your tax burden.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-chart-2/20 bg-chart-2/5">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">Peace of Mind</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Focus on running your business while we handle the numbers. Sleep easy knowing
-                    your finances are in expert hands.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-chart-2 mb-6">
-                <Calculator className="h-7 w-7 text-white" />
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="flex flex-col rounded-2xl border border-border/60 bg-card p-8">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-chart-2">
+                <Calculator className="h-7 w-7 text-white" aria-hidden />
               </div>
-              <h2 className="font-serif text-3xl font-bold mb-4">Accounting & Tax Services</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Keep your finances organized and compliant with our comprehensive accounting services.
-                From daily bookkeeping to annual tax preparation, we've got you covered.
+              <h2 id="accounting-services-heading" className="mb-4 font-serif text-3xl font-bold">
+                Accounting &amp; tax services
+              </h2>
+              <p className="mb-6 text-lg text-muted-foreground">
+                For clients who need it, TechTaxCorp also provides bookkeeping, tax preparation, payroll support, and
+                financial advisory—alongside your software initiatives.
               </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="mb-8 space-y-3">
                 {[
-                  "Bookkeeping - Monthly reconciliation and expense tracking",
-                  "Tax Preparation - Personal and business tax filing",
-                  "Business Accounting - Complete financial management",
-                  "Payroll Services - Accurate, timely payroll processing",
-                  "Financial Advisory - Strategic guidance for growth",
+                  "Bookkeeping and monthly reconciliation",
+                  "Tax preparation for individuals and businesses",
+                  "Payroll processing and compliance support",
+                  "Financial advisory for growth decisions",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-chart-2 mt-0.5 shrink-0" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-chart-2" aria-hidden />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
               <Button asChild data-testid="button-explore-accounting">
                 <Link href="/services/accounting">
-                  Explore Accounting Services <ArrowRight className="ml-2 h-4 w-4" />
+                  Explore accounting services <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+                </Link>
+              </Button>
+            </div>
+            <div className="flex flex-col rounded-2xl border border-border/60 bg-card p-8">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
+                <Globe className="h-7 w-7 text-primary-foreground" aria-hidden />
+              </div>
+              <h2 className="mb-4 font-serif text-3xl font-bold">Website design &amp; development</h2>
+              <p className="mb-6 text-lg text-muted-foreground">
+                Fast, modern marketing sites and product pages built for SEO—with clear calls-to-action and
+                layouts that convert.
+              </p>
+              <ul className="mb-8 space-y-3">
+                {[
+                  "Business and product websites",
+                  "Landing pages for campaigns and demos",
+                  "SEO-aware structure and content hierarchy",
+                  "Responsive design across all devices",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button asChild data-testid="button-explore-websites">
+                <Link href="/services/websites">
+                  Explore website services <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
                 </Link>
               </Button>
             </div>
@@ -165,17 +167,17 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl font-bold sm:text-4xl mb-4">
-            Need Both Services?
+      <section className="bg-primary py-16 text-primary-foreground sm:py-24" aria-labelledby="services-bundle-heading">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 id="services-bundle-heading" className="mb-4 font-serif text-3xl font-bold sm:text-4xl">
+            Bundle software delivery with marketing and accounting
           </h2>
-          <p className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
-            Many of our clients use both our web design and accounting services. Bundle them together
-            and save. Contact us for a custom package quote.
+          <p className="mx-auto mb-8 max-w-2xl text-lg opacity-90">
+            Many teams want a website refresh, a mobile app, and dependable books in the same season. Tell us what
+            you are trying to ship—we will propose a sensible sequence and milestones.
           </p>
           <Button size="lg" variant="secondary" asChild data-testid="button-get-quote">
-            <Link href="/contact">Get a Custom Quote</Link>
+            <Link href="/contact">Get a custom quote</Link>
           </Button>
         </div>
       </section>
