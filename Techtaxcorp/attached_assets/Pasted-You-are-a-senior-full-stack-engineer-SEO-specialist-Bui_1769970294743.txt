@@ -1,0 +1,68 @@
+You are a senior full-stack engineer + SEO specialist. Build a production-ready website for “TechTaxCorp” that offers:
+1) Website creation for customers/companies (business + personal sites)
+2) Accounting services for personal + business (bookkeeping, tax prep, payroll support, consulting)
+
+GOALS
+- Fast (Core Web Vitals), mobile-first, accessible (WCAG), conversion-focused, and highly SEO-optimized.
+- Generate qualified leads via contact form + “Book a consultation” CTA.
+- Easy to update content (services, FAQs, blog posts, portfolio).
+
+TECH STACK (must be Replit-friendly)
+- Next.js (App Router) + TypeScript
+- Tailwind CSS
+- Simple component system (no heavy UI libs needed)
+- Markdown/MDX blog (content in /content or /posts)
+
+PAGES (create all with strong copy + internal linking)
+- / (Home): hero, trust badges, two service pillars (Websites + Accounting), testimonials, FAQ, CTA
+- /services (Services hub): split into “Web Design & Development” and “Accounting & Tax”
+- /services/websites: business website, personal website, portfolio site, landing pages, maintenance
+- /services/accounting: bookkeeping, tax filing, business accounting, advisory
+- /pricing: packages (Starter/Growth/Pro) for websites + accounting (with “contact for custom quote”)
+- /portfolio: sample projects/cards (placeholder images/data)
+- /about: mission, process, why choose us, values
+- /blog: SEO blog index + individual post pages (MDX)
+- /contact: form + business email techtaxcorp@gmail.com + calendar embed placeholder
+- /privacy, /terms: basic legal pages
+
+SEO REQUIREMENTS (must implement, not just describe)
+- Per-page unique <title>, meta description, canonical URLs using Next.js metadata API
+- OpenGraph + Twitter cards for all pages
+- robots.txt + sitemap.xml generated automatically (include blog posts)
+- JSON-LD structured data:
+  - Organization schema site-wide
+  - LocalBusiness/ProfessionalService schema on contact page (use placeholders for address/phone)
+  - Service schema for each service page
+  - FAQPage schema for the FAQ section
+- Clean semantic HTML: one H1/page, correct heading hierarchy, schema-friendly FAQ markup
+- Image optimization (next/image), lazy loading, responsive images
+- Performance: avoid heavy JS, use server components where possible, minimal client JS
+- Internal linking strategy: homepage → services → service detail pages → contact; add related posts links
+- Add an SEO “/blog” content strategy section in README with 10 blog topic ideas (accounting + small business websites).
+
+LEAD & TRUST FEATURES
+- Contact form with validation + spam protection (honeypot + rate limiting; optional Google reCAPTCHA placeholder)
+- Form submits to a Next.js API route and sends email via SMTP (use env vars: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, TO_EMAIL=techtaxcorp@gmail.com)
+- Add a “Book Consultation” button that links to a placeholder Calendly URL (env: CALENDLY_URL)
+- Testimonials section (placeholder data)
+- “Free website audit / free consultation” CTA blocks
+
+ANALYTICS
+- Add optional integration toggles via env vars:
+  - GOOGLE_ANALYTICS_ID
+  - GOOGLE_TAG_MANAGER_ID
+- Implement in a privacy-friendly way and mention cookies in privacy page.
+
+DX & QUALITY
+- Provide clean folder structure, reusable components, consistent styling, and clear comments.
+- Add ESLint config and basic scripts: dev, build, start, lint.
+- Include a comprehensive README: setup, env vars, deployment steps, SEO checklist.
+
+CONTENT GUIDELINES
+- Write confident, trustworthy copy aimed at US small businesses + individuals.
+- Include keyword-rich but natural phrases like: “small business accounting”, “bookkeeping”, “tax preparation”, “business website design”, “portfolio website”.
+- Use placeholders for location: “[City, State]” so I can localize later.
+
+DELIVERABLES
+- Full working Next.js app with all pages, SEO assets, API route for contact, and blog system.
+- Make sure the site runs immediately in Replit with simple commands.
