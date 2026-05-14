@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Line } from "@react-three/drei";
 import * as THREE from "three";
 
-const R = 1.9;
+const R = 2.5;
 
 const CITIES: { lat: number; lon: number }[] = [
   { lat: 40.7, lon: -74.0 },
@@ -315,10 +315,10 @@ function GlobeScene() {
 export default function HeroR3FLayer() {
   return (
     <Canvas
-      className="mx-auto h-[min(420px,68vw)] w-full max-w-lg touch-none md:h-[min(500px,46vw)] md:max-w-none"
-      dpr={[1, 1.6]}
+      className="mx-auto h-[min(640px,92vw)] w-full touch-none md:h-[min(720px,62vw)] md:max-w-none lg:h-[min(800px,58vw)]"
+      dpr={[1, 1.8]}
       gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
-      camera={{ position: [0, 0.6, 5.8], fov: 38, near: 0.1, far: 60 }}
+      camera={{ position: [0, 0.3, 4.0], fov: 52, near: 0.1, far: 60 }}
       onCreated={({ gl }) => { gl.setClearColor(0x000000, 0); }}
     >
       <Suspense fallback={null}>
