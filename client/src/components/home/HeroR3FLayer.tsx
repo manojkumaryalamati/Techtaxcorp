@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Line } from "@react-three/drei";
 import * as THREE from "three";
 
-const R = 2.5;
+const R = 2.2;
 
 const CITIES: { lat: number; lon: number }[] = [
   { lat: 40.7, lon: -74.0 },
@@ -28,6 +28,8 @@ const CONNECTIONS = [
   [9, 1], [12, 5], [13, 9], [2, 1], [4, 6],
 ];
 
+const ARC_COLORS = ["#38bdf8", "#818cf8", "#f97316", "#34d399", "#f472b6", "#a78bfa"];
+
 function latLon(lat: number, lon: number, r: number) {
   const phi = (90 - lat) * (Math.PI / 180);
   const th = (lon + 180) * (Math.PI / 180);
@@ -49,13 +51,14 @@ function arcPoints(a: THREE.Vector3, b: THREE.Vector3, segs: number, lift: numbe
   return pts;
 }
 
+/* ─── Globe dot surface ─── */
 function GlobeDots() {
   const geo = useMemo(() => {
     const pos: number[] = [];
-    for (let lat = -80; lat <= 80; lat += 8) {
-      const count = Math.max(4, Math.round(36 * Math.cos(lat * Math.PI / 180)));
-      for (let i = 0; i < count; i++) {
-        const lon = -180 + (360 / count) * i;
+    for (let lat = -80; lat <= 80; lat += 7) {
+      const cols = Math.max(6, Math.round(52 * Math.cos(lat * Math.PI / 180)));
+      for (let i = 0; i < cols; i++) {
+        const lon = -180 + (360 / cols) * i;
         const v = latLon(lat, lon, R);
         pos.push(v.x, v.y, v.z);
       }
@@ -67,81 +70,108 @@ function GlobeDots() {
 
   return (
     <points geometry={geo}>
-      <pointsMaterial size={0.018} color="#3b82f6" sizeAttenuation transparent opacity={0.55} />
+      <pointsMaterial
+        size={0.028}
+        color="#60a5fa"
+        sizeAttenuation
+        transparent
+        opacity={0.75}
+        depthWrite={false}
+      />
     </points>
   );
 }
 
+/* ─── Lat / lon grid lines ─── */
 function GlobeGrid() {
-  const lats = useMemo(() => [-60, -30, 0, 30, 60], []);
-  const lons = useMemo(() => [0, 45, 90, 135, 180, -135, -90, -45], []);
-
   const latLines = useMemo(() =>
-    lats.map((lat) => {
+    [-60, -30, 0, 30, 60].map((lat) => {
       const pts: [number, number, number][] = [];
-      for (let i = 0; i <= 64; i++) {
-        const lon = -180 + (360 / 64) * i;
-        const v = latLon(lat, lon, R * 1.001);
+      for (let i = 0; i <= 80; i++) {
+        const lon = -180 + (360 / 80) * i;
+        const v = latLon(lat, lon, R * 1.002);
         pts.push([v.x, v.y, v.z]);
       }
       return pts;
-    }), [lats]);
+    }), []);
 
   const lonLines = useMemo(() =>
-    lons.map((lon) => {
+    [0, 45, 90, 135, 180, -135, -90, -45].map((lon) => {
       const pts: [number, number, number][] = [];
-      for (let i = 0; i <= 32; i++) {
-        const lat = -90 + (180 / 32) * i;
-        const v = latLon(lat, lon, R * 1.001);
+      for (let i = 0; i <= 40; i++) {
+        const lat = -90 + (180 / 40) * i;
+        const v = latLon(lat, lon, R * 1.002);
         pts.push([v.x, v.y, v.z]);
       }
       return pts;
-    }), [lons]);
+    }), []);
 
   return (
     <>
       {latLines.map((pts, i) => (
-        <Line key={`lat-${i}`} points={pts} color="#1e40af" lineWidth={0.4} transparent opacity={0.18} />
+        <Line key={`la${i}`} points={pts} color="#3b82f6" lineWidth={0.6} transparent opacity={0.28} />
       ))}
       {lonLines.map((pts, i) => (
-        <Line key={`lon-${i}`} points={pts} color="#1e40af" lineWidth={0.4} transparent opacity={0.18} />
+        <Line key={`lo${i}`} points={pts} color="#3b82f6" lineWidth={0.6} transparent opacity={0.28} />
       ))}
     </>
   );
 }
 
+/* ─── Glowing city node ─── */
 function CityNode({ lat, lon, color, size }: { lat: number; lon: number; color: string; size: number }) {
   const mesh = useRef<THREE.Mesh>(null);
+  const ring = useRef<THREE.Mesh>(null);
   const pos = useMemo(() => latLon(lat, lon, R), [lat, lon]);
-  const t0 = useMemo(() => Math.random() * Math.PI * 2, []);
+  const seed = useMemo(() => Math.random() * Math.PI * 2, []);
 
   useFrame(({ clock }) => {
-    if (!mesh.current) return;
-    const pulse = 0.9 + 0.12 * Math.sin(clock.elapsedTime * 1.8 + t0);
-    mesh.current.scale.setScalar(pulse);
+    const t = clock.elapsedTime;
+    if (mesh.current) {
+      const s = 0.85 + 0.18 * Math.sin(t * 1.6 + seed);
+      mesh.current.scale.setScalar(s);
+    }
+    if (ring.current) {
+      const rs = 1 + 0.5 * ((Math.sin(t * 1.1 + seed) + 1) / 2);
+      ring.current.scale.setScalar(rs);
+      (ring.current.material as THREE.MeshStandardMaterial).opacity =
+        0.6 * (1 - ((Math.sin(t * 1.1 + seed) + 1) / 2) * 0.8);
+    }
   });
 
   return (
-    <mesh ref={mesh} position={[pos.x, pos.y, pos.z]}>
-      <sphereGeometry args={[size, 8, 8]} />
-      <meshStandardMaterial
-        color={color}
-        emissive={color}
-        emissiveIntensity={2.2}
-        roughness={0.1}
-        metalness={0.0}
-        toneMapped={false}
-      />
-    </mesh>
+    <group position={[pos.x, pos.y, pos.z]}>
+      {/* Outer expanding ring */}
+      <mesh ref={ring}>
+        <sphereGeometry args={[size * 2.8, 8, 8]} />
+        <meshStandardMaterial
+          color={color}
+          emissive={color}
+          emissiveIntensity={1.0}
+          transparent
+          opacity={0.5}
+          depthWrite={false}
+        />
+      </mesh>
+      {/* Core dot */}
+      <mesh ref={mesh}>
+        <sphereGeometry args={[size, 10, 10]} />
+        <meshStandardMaterial
+          color={color}
+          emissive={color}
+          emissiveIntensity={4.0}
+          roughness={0}
+          metalness={0}
+          toneMapped={false}
+        />
+      </mesh>
+    </group>
   );
 }
 
+/* ─── Animated arc between cities ─── */
 function ConnectionArc({
-  fromCity,
-  toCity,
-  color,
-  speed,
-  offset,
+  fromCity, toCity, color, speed, offset,
 }: {
   fromCity: { lat: number; lon: number };
   toCity: { lat: number; lon: number };
@@ -151,36 +181,35 @@ function ConnectionArc({
 }) {
   const a = useMemo(() => latLon(fromCity.lat, fromCity.lon, R), [fromCity]);
   const b = useMemo(() => latLon(toCity.lat, toCity.lon, R), [toCity]);
-  const arcPts = useMemo(() => arcPoints(a, b, 48, 0.48), [a, b]);
+  const pts = useMemo(() => arcPoints(a, b, 60, 0.55), [a, b]);
 
   const pulseRef = useRef<THREE.Mesh>(null);
-  const tRef = useRef(offset);
 
   useFrame(({ clock }) => {
-    tRef.current = (offset + clock.elapsedTime * speed * 0.07) % 1;
+    const t = ((offset + clock.elapsedTime * speed * 0.065) % 1 + 1) % 1;
     if (!pulseRef.current) return;
-    const t = tRef.current;
-    const idx = Math.floor(t * (arcPts.length - 1));
-    const frac = t * (arcPts.length - 1) - idx;
-    const p0 = arcPts[idx];
-    const p1 = arcPts[Math.min(idx + 1, arcPts.length - 1)];
+    const raw = t * (pts.length - 1);
+    const idx = Math.floor(raw);
+    const frac = raw - idx;
+    const p0 = pts[idx];
+    const p1 = pts[Math.min(idx + 1, pts.length - 1)];
     pulseRef.current.position.set(
       p0[0] + (p1[0] - p0[0]) * frac,
       p0[1] + (p1[1] - p0[1]) * frac,
-      p0[2] + (p1[2] - p0[2]) * frac
+      p0[2] + (p1[2] - p0[2]) * frac,
     );
   });
 
   return (
     <>
-      <Line points={arcPts} color={color} lineWidth={0.8} transparent opacity={0.28} />
+      <Line points={pts} color={color} lineWidth={1.2} transparent opacity={0.35} />
       <mesh ref={pulseRef}>
-        <sphereGeometry args={[0.036, 8, 8]} />
+        <sphereGeometry args={[0.045, 8, 8]} />
         <meshStandardMaterial
           color={color}
           emissive={color}
-          emissiveIntensity={3.5}
-          roughness={0.0}
+          emissiveIntensity={5}
+          roughness={0}
           toneMapped={false}
         />
       </mesh>
@@ -188,65 +217,57 @@ function ConnectionArc({
   );
 }
 
+/* ─── Inner dim sphere so stars don't show through globe ─── */
+function GlobeInner() {
+  return (
+    <mesh>
+      <sphereGeometry args={[R * 0.97, 48, 48]} />
+      <meshStandardMaterial color="#030c1c" roughness={1} metalness={0} />
+    </mesh>
+  );
+}
+
+/* ─── Atmospheric glow shells ─── */
 function Atmosphere() {
   return (
-    <mesh>
-      <sphereGeometry args={[R * 1.06, 48, 48]} />
-      <meshStandardMaterial
-        color="#1d4ed8"
-        emissive="#1e40af"
-        emissiveIntensity={0.18}
-        transparent
-        opacity={0.055}
-        side={THREE.BackSide}
-        depthWrite={false}
-      />
-    </mesh>
+    <>
+      <mesh>
+        <sphereGeometry args={[R * 1.04, 48, 48]} />
+        <meshStandardMaterial
+          color="#1d4ed8"
+          emissive="#1e40af"
+          emissiveIntensity={0.3}
+          transparent
+          opacity={0.07}
+          side={THREE.BackSide}
+          depthWrite={false}
+        />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[R * 1.10, 48, 48]} />
+        <meshStandardMaterial
+          color="#0ea5e9"
+          emissive="#0284c7"
+          emissiveIntensity={0.15}
+          transparent
+          opacity={0.04}
+          side={THREE.BackSide}
+          depthWrite={false}
+        />
+      </mesh>
+    </>
   );
 }
 
-function AtmosphereRing() {
-  return (
-    <mesh>
-      <sphereGeometry args={[R * 1.12, 48, 48]} />
-      <meshStandardMaterial
-        color="#0ea5e9"
-        emissive="#0284c7"
-        emissiveIntensity={0.08}
-        transparent
-        opacity={0.022}
-        side={THREE.BackSide}
-        depthWrite={false}
-      />
-    </mesh>
-  );
-}
-
-function GlobeCore() {
-  return (
-    <mesh>
-      <sphereGeometry args={[R * 0.998, 64, 64]} />
-      <meshStandardMaterial
-        color="#050e1f"
-        roughness={0.95}
-        metalness={0.05}
-      />
-    </mesh>
-  );
-}
-
+/* ─── Background stars ─── */
 function Stars() {
   const geo = useMemo(() => {
     const pos: number[] = [];
-    for (let i = 0; i < 900; i++) {
-      const r = 8 + Math.random() * 6;
+    for (let i = 0; i < 1200; i++) {
+      const r = 9 + Math.random() * 5;
       const u = Math.random() * Math.PI * 2;
       const v = Math.acos(2 * Math.random() - 1);
-      pos.push(
-        r * Math.sin(v) * Math.cos(u),
-        r * Math.sin(v) * Math.sin(u),
-        r * Math.cos(v)
-      );
+      pos.push(r * Math.sin(v) * Math.cos(u), r * Math.sin(v) * Math.sin(u), r * Math.cos(v));
     }
     const g = new THREE.BufferGeometry();
     g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
@@ -255,56 +276,65 @@ function Stars() {
 
   return (
     <points geometry={geo}>
-      <pointsMaterial size={0.035} color="#e2e8f0" sizeAttenuation transparent opacity={0.65} />
+      <pointsMaterial size={0.04} color="#e2e8f0" sizeAttenuation transparent opacity={0.7} depthWrite={false} />
     </points>
   );
 }
 
-const ARC_COLORS = ["#38bdf8", "#818cf8", "#f97316", "#34d399", "#f472b6", "#a78bfa"];
-
+/* ─── Full scene ─── */
 function GlobeScene() {
   const globeRef = useRef<THREE.Group>(null);
 
   useFrame(({ clock }) => {
     if (!globeRef.current) return;
-    globeRef.current.rotation.y = clock.elapsedTime * 0.09;
-    globeRef.current.rotation.x = Math.sin(clock.elapsedTime * 0.12) * 0.04;
+    globeRef.current.rotation.y = clock.elapsedTime * 0.08;
+    globeRef.current.rotation.x = Math.sin(clock.elapsedTime * 0.1) * 0.035;
   });
 
   return (
     <>
       <Stars />
-      <ambientLight intensity={0.35} color="#c7d2fe" />
-      <directionalLight position={[5, 4, 5]} intensity={0.6} color="#dbeafe" />
-      <directionalLight position={[-4, -2, -4]} intensity={0.18} color="#1e40af" />
-      <pointLight position={[3, 2, 4]} intensity={0.9} color="#38bdf8" distance={12} decay={2} />
-      <pointLight position={[-3, -1, 3]} intensity={0.45} color="#818cf8" distance={10} decay={2} />
+
+      {/* Lighting */}
+      <ambientLight intensity={0.15} color="#c7d2fe" />
+      <directionalLight position={[6, 5, 8]} intensity={0.5} color="#bfdbfe" />
+      <pointLight position={[5, 3, 6]} intensity={1.4} color="#38bdf8" distance={18} decay={2} />
+      <pointLight position={[-5, -2, 4]} intensity={0.7} color="#6366f1" distance={14} decay={2} />
+      <pointLight position={[0, 6, -4]} intensity={0.5} color="#818cf8" distance={14} decay={2} />
 
       <group ref={globeRef}>
-        <GlobeCore />
-        <GlobeGrid />
-        <GlobeDots />
-        <Atmosphere />
-        <AtmosphereRing />
+        {/* Globe inner (opaque so stars don't bleed through) */}
+        <GlobeInner />
 
+        {/* Grid lines */}
+        <GlobeGrid />
+
+        {/* Surface dots */}
+        <GlobeDots />
+
+        {/* Atmosphere glow */}
+        <Atmosphere />
+
+        {/* City nodes */}
         {CITIES.map((c, i) => (
           <CityNode
             key={i}
             lat={c.lat}
             lon={c.lon}
             color={i % 3 === 0 ? "#38bdf8" : i % 3 === 1 ? "#818cf8" : "#f97316"}
-            size={i < 4 ? 0.038 : 0.028}
+            size={i < 5 ? 0.052 : 0.038}
           />
         ))}
 
+        {/* Connection arcs + pulses */}
         {CONNECTIONS.map(([fi, ti], i) => (
           <ConnectionArc
             key={i}
             fromCity={CITIES[fi]}
             toCity={CITIES[ti]}
             color={ARC_COLORS[i % ARC_COLORS.length]}
-            speed={0.6 + (i % 4) * 0.15}
-            offset={(i / CONNECTIONS.length)}
+            speed={0.55 + (i % 5) * 0.13}
+            offset={i / CONNECTIONS.length}
           />
         ))}
       </group>
@@ -315,10 +345,10 @@ function GlobeScene() {
 export default function HeroR3FLayer() {
   return (
     <Canvas
-      className="mx-auto h-[min(640px,92vw)] w-full touch-none md:h-[min(720px,62vw)] md:max-w-none lg:h-[min(800px,58vw)]"
+      className="mx-auto h-[min(560px,88vw)] w-full touch-none md:h-[min(640px,56vw)] md:max-w-none lg:h-[min(720px,52vw)]"
       dpr={[1, 1.8]}
       gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
-      camera={{ position: [0, 0.3, 4.0], fov: 52, near: 0.1, far: 60 }}
+      camera={{ position: [0, 0.5, 5.5], fov: 44, near: 0.1, far: 60 }}
       onCreated={({ gl }) => { gl.setClearColor(0x000000, 0); }}
     >
       <Suspense fallback={null}>
