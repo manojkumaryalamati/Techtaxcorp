@@ -10,8 +10,10 @@ import { portfolioProjects } from "@/lib/data";
 
 export default function Portfolio() {
   useSEO({
-    title: "Portfolio - Our Work",
-    description: "View our portfolio of website design projects. See examples of business websites, restaurant sites, fitness studios, and more that we've created for our clients.",
+    title: "TechTaxCorp Portfolio | Web Apps, Websites & Software Products",
+    description: "Browse TechTaxCorp's portfolio of web application development, custom business software, website design, and digital product projects—including VahanBooks and MySiteWorks.",
+    canonicalPath: "/portfolio",
+    keywords: ["TechTaxCorp portfolio", "web app portfolio", "software development projects", "website design portfolio", "VahanBooks", "MySiteWorks"],
   });
 
   return (

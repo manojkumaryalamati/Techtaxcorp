@@ -4,8 +4,10 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Privacy() {
   useSEO({
-    title: "Privacy Policy",
-    description: "TechTaxCorp privacy policy. Learn how we collect, use, and protect your personal information.",
+    title: "Privacy Policy | TechTaxCorp",
+    description: "TechTaxCorp privacy policy—how we collect, use, store, and protect personal information when you use our website and services.",
+    canonicalPath: "/privacy",
+    robots: "index, follow",
   });
 
   return (
@@ -14,12 +16,8 @@ export default function Privacy() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <Badge variant="secondary" className="mb-4">Legal</Badge>
-            <h1 className="font-serif text-4xl font-bold sm:text-5xl mb-6">
-              Privacy Policy
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Last updated: January 1, 2024
-            </p>
+            <h1 className="font-serif text-4xl font-bold sm:text-5xl mb-6">Privacy Policy</h1>
+            <p className="text-lg text-muted-foreground">Last updated: January 1, 2024</p>
           </div>
         </div>
       </section>
@@ -29,9 +27,9 @@ export default function Privacy() {
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <h2>Introduction</h2>
             <p>
-              TechTaxCorp ("we," "our," or "us") respects your privacy and is committed to protecting
-              your personal data. This privacy policy explains how we collect, use, disclose, and
-              safeguard your information when you visit our website or use our services.
+              TechTaxCorp ("we," "our," or "us") respects your privacy and is committed to protecting your personal data.
+              This privacy policy explains how we collect, use, disclose, and safeguard your information when you visit
+              our website or use our services.
             </p>
 
             <h2>Information We Collect</h2>
@@ -65,27 +63,26 @@ export default function Privacy() {
 
             <h2>Cookies and Tracking</h2>
             <p>
-              We may use cookies and similar tracking technologies to collect information about your
-              browsing activities. You can control cookies through your browser settings.
+              We may use cookies and similar tracking technologies to collect information about your browsing activities.
+              You can control cookies through your browser settings.
             </p>
             <p>
-              If enabled, we may use Google Analytics and Google Tag Manager to analyze website usage.
-              These services may collect information about your visits using cookies and other
-              technologies.
+              If enabled, we may use Google Analytics and Google Tag Manager to analyze website usage. These services may
+              collect information about your visits using cookies and other technologies.
             </p>
 
             <h2>Data Security</h2>
             <p>
-              We implement appropriate technical and organizational measures to protect your personal
-              data against unauthorized access, alteration, disclosure, or destruction. However, no
-              method of transmission over the Internet is 100% secure.
+              We implement appropriate technical and organizational measures to protect your personal data against
+              unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the
+              Internet is 100% secure.
             </p>
 
             <h2>Third-Party Services</h2>
             <p>
-              We may share your information with third-party service providers who assist us in
-              operating our website, conducting our business, or providing services to you. These
-              parties are obligated to keep your information confidential.
+              We may share your information with third-party service providers who assist us in operating our website,
+              conducting our business, or providing services to you. These parties are obligated to keep your information
+              confidential.
             </p>
 
             <h2>Your Rights</h2>
@@ -100,27 +97,24 @@ export default function Privacy() {
 
             <h2>Data Retention</h2>
             <p>
-              We retain your personal data only for as long as necessary to fulfill the purposes for
-              which it was collected, including for legal, accounting, or reporting requirements.
+              We retain your personal data only for as long as necessary to fulfill the purposes for which it was
+              collected, including for legal, accounting, or reporting requirements.
             </p>
 
             <h2>Children's Privacy</h2>
             <p>
-              Our services are not intended for individuals under the age of 18. We do not knowingly
-              collect personal data from children.
+              Our services are not intended for individuals under the age of 18. We do not knowingly collect personal data
+              from children.
             </p>
 
             <h2>Changes to This Policy</h2>
             <p>
-              We may update this privacy policy from time to time. We will notify you of any changes
-              by posting the new policy on this page and updating the "Last updated" date.
+              We may update this privacy policy from time to time. We will notify you of any changes by posting the new
+              policy on this page and updating the "Last updated" date.
             </p>
 
             <h2>Contact Us</h2>
-            <p>
-              If you have any questions about this privacy policy or our data practices, please
-              contact us at:
-            </p>
+            <p>If you have any questions about this privacy policy or our data practices, please contact us at:</p>
             <p>
               <strong>Email:</strong> techtaxcorp@gmail.com
               <br />
