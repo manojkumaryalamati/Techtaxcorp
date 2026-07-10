@@ -52,9 +52,9 @@ Self-employed individuals can often deduct health insurance premiums for themsel
 
 ---
 
-*Need help maximizing your business deductions? Contact TechTaxCorp for a free consultation.*
+*Need help maximizing your business deductions? Contact TTCorpSolutions for a free consultation.*
     `,
-    author: "TechTaxCorp Team",
+    author: "TTCorpSolutions Team",
     date: "2024-01-15",
     category: "accounting",
     readTime: "5 min read",
@@ -90,9 +90,9 @@ Customers expect to find information online. A website makes it easy for them to
 
 ---
 
-*Ready to elevate your online presence? TechTaxCorp creates stunning, conversion-focused websites for small businesses.*
+*Ready to elevate your online presence? TTCorpSolutions creates stunning, conversion-focused websites for small businesses.*
     `,
-    author: "TechTaxCorp Team",
+    author: "TTCorpSolutions Team",
     date: "2024-01-10",
     category: "websites",
     readTime: "4 min read",
@@ -132,9 +132,9 @@ Understand your revenue, expenses, profit margins, and accounts receivable aging
 
 ---
 
-*Need help setting up your bookkeeping system? Contact TechTaxCorp for expert guidance.*
+*Need help setting up your bookkeeping system? Contact TTCorpSolutions for expert guidance.*
     `,
-    author: "TechTaxCorp Team",
+    author: "TTCorpSolutions Team",
     date: "2024-01-05",
     category: "accounting",
     readTime: "6 min read",
@@ -174,9 +174,9 @@ For local businesses, claim your Google Business Profile and ensure your name, a
 
 ---
 
-*TechTaxCorp builds SEO-optimized websites that help your business get found online.*
+*TTCorpSolutions builds SEO-optimized websites that help your business get found online.*
     `,
-    author: "TechTaxCorp Team",
+    author: "TTCorpSolutions Team",
     date: "2024-01-01",
     category: "websites",
     readTime: "5 min read",

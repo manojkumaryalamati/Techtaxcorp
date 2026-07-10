@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { TechTaxCorpLogo } from "@/components/brand/TechTaxCorpLogo";
+import { TTCorpSolutionsLogo } from "@/components/brand/TTCorpSolutionsLogo";
 import { SiFacebook, SiLinkedin, SiX } from "react-icons/si";
 
 const primaryLinks = [
@@ -30,10 +30,10 @@ export function Footer() {
               className="inline-flex w-fit rounded-md py-1 ring-offset-background transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               data-testid="link-logo-footer"
             >
-              <TechTaxCorpLogo variant="footer" />
+              <TTCorpSolutionsLogo variant="footer" />
             </Link>
             <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
-              TechTaxCorp — A software company building simple business apps for modern businesses.
+              TTCorpSolutions — A software company building simple business apps for modern businesses.
             </p>
             <div className="flex gap-3">
               <a
@@ -107,7 +107,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} TechTaxCorp. All rights reserved.
+            &copy; {currentYear} TTCorpSolutions. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {legalLinks.map((link) => (

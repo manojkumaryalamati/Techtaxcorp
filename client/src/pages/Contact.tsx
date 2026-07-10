@@ -57,10 +57,10 @@ function initialServiceFromUrl(): string {
 
 export default function Contact() {
   useSEO({
-    title: "Contact TechTaxCorp | Custom Software, Apps & Websites",
-    description: "Contact TechTaxCorp about VahanBooks, MySiteWorks, ledger software, or custom development—web applications, mobile apps, dashboards, and websites. Email: techtaxcorp@gmail.com",
+    title: "Contact TTCorpSolutions | Custom Software, Apps & Websites",
+    description: "Contact TTCorpSolutions about VahanBooks, MySiteWorks, ledger software, or custom development—web applications, mobile apps, dashboards, and websites. Email: techtaxcorp@gmail.com",
     canonicalPath: "/contact",
-    keywords: ["contact TechTaxCorp", "custom software quote", "VahanBooks contact", "MySiteWorks contact", "ledger software development"],
+    keywords: ["contact TTCorpSolutions", "custom software quote", "VahanBooks contact", "MySiteWorks contact", "ledger software development"],
   });
 
   const { toast } = useToast();

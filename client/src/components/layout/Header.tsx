@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { TechTaxCorpLogo } from "@/components/brand/TechTaxCorpLogo";
+import { TTCorpSolutionsLogo } from "@/components/brand/TTCorpSolutionsLogo";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -67,7 +67,7 @@ export function Header() {
           className="shrink-0 rounded-md py-0.5 ring-offset-background transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           data-testid="link-logo-header"
         >
-          <TechTaxCorpLogo variant="header" />
+          <TTCorpSolutionsLogo variant="header" />
         </Link>
 
         <div className="hidden lg:flex lg:items-center lg:gap-1">
@@ -138,7 +138,7 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 data-testid="link-logo-mobile"
               >
-                <TechTaxCorpLogo variant="header" />
+                <TTCorpSolutionsLogo variant="header" />
               </Link>
               <nav className="flex flex-col gap-1 py-4" aria-label="Mobile">
                 {navigation.map((item) => (

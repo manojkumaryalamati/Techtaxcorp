@@ -13,11 +13,11 @@ const orgId = `${SITE_ORIGIN}/#organization`;
 
 export default function VahanBooks() {
   useSEO({
-    title: "VahanBooks by TechTaxCorp | Transport Khata & Trip Management Software",
+    title: "VahanBooks by TTCorpSolutions | Transport Khata & Trip Management Software",
     description:
-      "VahanBooks helps transport owners, brokers, and fleet operators manage trips, payments, khata, invoices, documents, and reports from one simple app—designed and developed by TechTaxCorp.",
+      "VahanBooks helps transport owners, brokers, and fleet operators manage trips, payments, khata, invoices, documents, and reports from one simple app—designed and developed by TTCorpSolutions.",
     canonicalPath: "/vahanbooks",
-    keywords: ["VahanBooks", "TechTaxCorp", "transport khata software", "trip management software", "truck fleet software India", "transport ledger", "fleet khata app"],
+    keywords: ["VahanBooks", "TTCorpSolutions", "transport khata software", "trip management software", "truck fleet software India", "transport ledger", "fleet khata app"],
   });
 
   const softwareJsonLd = {
@@ -25,7 +25,7 @@ export default function VahanBooks() {
     name: "VahanBooks",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, Android, iOS",
-    description: "VahanBooks, designed and developed by TechTaxCorp, helps transport businesses manage trips, payments, khata, invoices, and reports easily.",
+    description: "VahanBooks, designed and developed by TTCorpSolutions, helps transport businesses manage trips, payments, khata, invoices, and reports easily.",
     url: `${SITE_ORIGIN}/vahanbooks`,
     author: { "@type": "Organization", "@id": orgId },
     publisher: { "@type": "Organization", "@id": orgId },
@@ -48,13 +48,13 @@ export default function VahanBooks() {
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
             <Badge className="mb-4 rounded-md bg-orange-500 text-white">Transport software</Badge>
             <h1 id="vahanbooks-hero-heading" className="font-serif text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              VahanBooks by TechTaxCorp
+              VahanBooks by TTCorpSolutions
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-orange-700 dark:text-orange-300">
               Simple transport khata and trip management for Indian truck businesses.
             </p>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground sm:text-lg">
-              VahanBooks, designed and developed by TechTaxCorp, helps transport businesses manage trips, payments,
+              VahanBooks, designed and developed by TTCorpSolutions, helps transport businesses manage trips, payments,
               khata, invoices, and reports easily—one practical app for owners, brokers, and fleet operators.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -91,7 +91,7 @@ export default function VahanBooks() {
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <Card><CardContent className="p-6"><h3 className="font-semibold">Khata-first clarity</h3><p className="mt-2 text-sm text-muted-foreground">Party and supplier balances stay visible—so collections and follow-ups do not depend on scattered notebooks.</p></CardContent></Card>
               <Card><CardContent className="p-6"><h3 className="font-semibold">Trip operations in one flow</h3><p className="mt-2 text-sm text-muted-foreground">Trips, PODs, and documents stay attached to the job—reducing disputes and lost paperwork.</p></CardContent></Card>
-              <Card><CardContent className="p-6"><h3 className="font-semibold">Built by TechTaxCorp</h3><p className="mt-2 text-sm text-muted-foreground">Product ownership, roadmap, and engineering sit with one team—so improvements stay aligned with field reality.</p></CardContent></Card>
+              <Card><CardContent className="p-6"><h3 className="font-semibold">Built by TTCorpSolutions</h3><p className="mt-2 text-sm text-muted-foreground">Product ownership, roadmap, and engineering sit with one team—so improvements stay aligned with field reality.</p></CardContent></Card>
             </div>
           </div>
         </section>
@@ -102,7 +102,7 @@ export default function VahanBooks() {
             <h2 id="vahanbooks-cta-heading" className="mt-4 font-serif text-2xl font-bold">See if VahanBooks fits your fleet or brokerage</h2>
             <p className="mt-3 text-muted-foreground">Tell us how you run trips and khata today—we will suggest a practical rollout and what to automate first.</p>
             <Button asChild size="lg" className="mt-6 rounded-full bg-orange-500 hover:bg-orange-600">
-              <Link href="/contact?interest=vahanbooks">Contact TechTaxCorp</Link>
+              <Link href="/contact?interest=vahanbooks">Contact TTCorpSolutions</Link>
             </Button>
           </div>
         </section>

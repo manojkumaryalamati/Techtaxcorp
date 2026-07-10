@@ -83,7 +83,7 @@ export async function registerRoutes(
     res.type("text/plain");
     res.send(`User-agent: *
 Allow: /
-Sitemap: https://techtaxcorp.com/sitemap.xml
+Sitemap: https://ttcorpsolutions.com/sitemap.xml
 
 Disallow: /api/
 `);
@@ -107,7 +107,7 @@ Disallow: /api/
       pages.push({ loc: `/blog/${post.slug}`, priority: "0.6", changefreq: "monthly" });
     });
 
-    const baseUrl = "https://techtaxcorp.com";
+    const baseUrl = "https://ttcorpsolutions.com";
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages

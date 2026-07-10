@@ -115,7 +115,7 @@ async function main() {
     if (!repoExists) {
       await octokit.repos.createForAuthenticatedUser({
         name: repoName,
-        description: 'TechTaxCorp - Professional Website Design & Accounting Services',
+        description: 'TTCorpSolutions - Professional Website Design & Accounting Services',
         private: false,
         auto_init: false
       });
@@ -139,7 +139,7 @@ async function main() {
         repo: repoName,
         path: 'README.md',
         message: 'Initial commit: Add README',
-        content: Buffer.from('# TechTaxCorp\n\nProfessional Website Design & Accounting Services\n').toString('base64'),
+        content: Buffer.from('# TTCorpSolutions\n\nProfessional Website Design & Accounting Services\n').toString('base64'),
         branch: branch
       });
       console.log('Repository initialized');
@@ -236,7 +236,7 @@ async function main() {
     const { data: commit } = await octokit.git.createCommit({
       owner,
       repo: repoName,
-      message: 'TechTaxCorp professional website\n\nFeatures:\n- Professional website design and accounting services\n- Contact form with EmailJS integration\n- SEO optimized pages\n- Responsive design\n- PostgreSQL database for contact submissions',
+      message: 'TTCorpSolutions professional website\n\nFeatures:\n- Professional website design and accounting services\n- Contact form with EmailJS integration\n- SEO optimized pages\n- Responsive design\n- PostgreSQL database for contact submissions',
       tree: tree.sha,
       parents: [latestCommitSha]
     });

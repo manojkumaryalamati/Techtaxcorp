@@ -46,12 +46,12 @@ export function CTASection() {
                 <dt className="inline font-semibold text-white">Site: </dt>
                 <dd className="inline">
                   <a
-                    href="https://techtaxcorp.com"
+                    href="https://ttcorpsolutions.com"
                     className="text-orange-300 underline decoration-orange-500/40 underline-offset-4 hover:decoration-orange-300"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    techtaxcorp.com
+                    ttcorpsolutions.com
                   </a>
                 </dd>
               </div>
@@ -62,7 +62,7 @@ export function CTASection() {
               asChild
             >
               <Link href="/contact">
-                Contact TechTaxCorp
+                Contact TTCorpSolutions
                 <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
               </Link>
             </Button>

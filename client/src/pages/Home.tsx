@@ -8,7 +8,7 @@ import { industryItems, processSteps } from "@/lib/home-content";
 import { Hero3D } from "@/components/home/Hero3D";
 import { ProductShowcase } from "@/components/home/ProductShowcase";
 import { ServicesSection } from "@/components/home/ServicesSection";
-import { WhyTechTaxCorp } from "@/components/home/WhyTechTaxCorp";
+import { WhyTTCorpSolutions } from "@/components/home/WhyTTCorpSolutions";
 import { CTASection } from "@/components/home/CTASection";
 import { HomeFAQ } from "@/components/home/HomeFAQ";
 import { fadeUp } from "@/components/home/motion-variants";
@@ -30,12 +30,12 @@ export default function Home() {
   }, [location]);
 
   useSEO({
-    title: "TechTaxCorp | Ledger Software & Business Application Development Company",
+    title: "TTCorpSolutions | Ledger Software & Business Application Development Company",
     description:
-      "TechTaxCorp designs and develops ledger software, business applications, websites, mobile apps, and SaaS products including VahanBooks and MySiteWorks—plus custom web application development and digital marketing support.",
+      "TTCorpSolutions designs and develops ledger software, business applications, websites, mobile apps, and SaaS products including VahanBooks and MySiteWorks—plus custom web application development and digital marketing support.",
     canonicalPath: "/",
     keywords: [
-      "TechTaxCorp",
+      "TTCorpSolutions",
       "ledger software company",
       "business software development company",
       "custom web application development",
@@ -53,7 +53,7 @@ export default function Home() {
       <Hero3D />
       <ProductShowcase />
       <ServicesSection />
-      <WhyTechTaxCorp />
+      <WhyTTCorpSolutions />
 
       <section
         id="industries"

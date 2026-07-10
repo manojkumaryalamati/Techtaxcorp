@@ -39,7 +39,7 @@ export function ProductShowcase() {
                 </div>
                 <h3 className="mt-5 font-serif text-xl font-bold sm:text-2xl lg:text-3xl">VahanBooks</h3>
                 <p className="mt-2 text-sm font-semibold leading-snug text-orange-600 dark:text-orange-400">
-                  VahanBooks by TechTaxCorp — Simple transport khata and trip management for Indian truck businesses.
+                  VahanBooks by TTCorpSolutions — Simple transport khata and trip management for Indian truck businesses.
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                   Trip and khata software for owners, brokers, and fleet operators. One app for trips, payments,
@@ -75,7 +75,7 @@ export function ProductShowcase() {
                 </div>
                 <h3 className="mt-5 font-serif text-xl font-bold sm:text-2xl lg:text-3xl">MySiteWorks</h3>
                 <p className="mt-2 text-sm font-semibold leading-snug text-sky-700 dark:text-sky-400">
-                  MySiteWorks by TechTaxCorp — Simple construction project management for modern builders.
+                  MySiteWorks by TTCorpSolutions — Simple construction project management for modern builders.
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                   Mobile-first construction software for owners, contractors, and crews—projects, expenses, progress,

@@ -2,7 +2,7 @@ import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
 
-console.log("Building TechTaxCorp for Firebase Hosting...\n");
+console.log("Building TTCorpSolutions for Firebase Hosting...\n");
 
 console.log("Step 1: Building frontend with Vite...");
 execSync("npx vite build --config vite.config.firebase.ts", { stdio: "inherit" });
@@ -12,7 +12,7 @@ const distDir = path.resolve("client/dist");
 console.log("\nStep 2: Generating robots.txt...");
 const robotsTxt = `User-agent: *
 Allow: /
-Sitemap: https://techtaxcorp.com/sitemap.xml
+Sitemap: https://ttcorpsolutions.com/sitemap.xml
 
 Disallow: /api/
 `;
@@ -37,7 +37,7 @@ const pages = [
   { loc: "/blog/quarterly-tax-planning-tips", priority: "0.6", changefreq: "monthly" },
 ];
 
-const baseUrl = "https://techtaxcorp.com";
+const baseUrl = "https://ttcorpsolutions.com";
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map((page) => `  <url>
