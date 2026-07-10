@@ -67,11 +67,20 @@ export function ProductShowcase() {
                       imageFirst ? "lg:order-2" : ""
                     }`}
                     role="img"
-                    aria-label={`${product.name} product screenshot placeholder`}
+                    aria-label={`${product.name} logo`}
                   >
-                    <span className="text-6xl font-bold tracking-tight text-slate-300 dark:text-white/15">
-                      {product.name}
-                    </span>
+                    {product.logo ? (
+                      <img
+                        src={product.logo}
+                        alt={`${product.name} logo`}
+                        className="max-h-28 w-auto max-w-[220px] object-contain drop-shadow-sm sm:max-h-32"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="text-6xl font-bold tracking-tight text-slate-300 dark:text-white/15">
+                        {product.name}
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex flex-col justify-center p-6 sm:p-9">
