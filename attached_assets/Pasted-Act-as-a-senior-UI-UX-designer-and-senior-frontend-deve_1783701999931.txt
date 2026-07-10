@@ -1,0 +1,521 @@
+Act as a senior UI/UX designer and senior frontend developer.
+
+Review the current TTCorp Solutions website and redesign the homepage into a premium, production-level software company website.
+
+IMPORTANT RESTRICTION:
+Do not redesign, replace, restructure, or remove the existing hero section.
+
+Keep the current hero section exactly as it is in terms of:
+- Background image and globe animation
+- Overall layout
+- Heading placement
+- Buttons
+- Product cards
+- Hero height
+- Existing responsive behavior
+
+Inside the hero section, only update the written content and company-name references where required. Do not change its visual structure.
+
+COMPANY INFORMATION
+
+Final company name:
+TTCorp Solutions
+
+TTCorp Solutions is a registered software and digital services company in India.
+
+The company provides:
+- Custom web application development
+- Android application development
+- iOS application development
+- Cross-platform mobile app development
+- Windows and desktop software development
+- Business software and SaaS development
+- Website design and development
+- UI/UX design
+- Admin dashboards and portals
+- Workflow automation
+- Digital marketing
+- Application maintenance and support
+
+Existing TTCorp Solutions products:
+- VahanBooks
+- MySiteWorks
+- OnePrime
+
+Existing client work includes:
+- Dasara Luxury Eats
+- Forty Niner Trucking LLC
+
+MAIN OBJECTIVE
+
+Upgrade the content and all homepage sections below the hero into a premium IT services and software product company layout.
+
+The finished website should look like a real software agency and product studio, not a generic template.
+
+Do not rebuild the application from scratch.
+
+Do not change:
+- Existing routes
+- Navigation behavior
+- Product links
+- Contact forms
+- API integrations
+- Firebase configuration
+- Existing functional flows
+- Mobile menu behavior
+- SEO implementation
+- Current hero-section design
+- Existing project architecture unless technically necessary
+
+COMPANY NAME CLEANUP
+
+Replace all old references to:
+- TechTaxCorp
+- Tech Tax Corp
+- TT Corp Solution
+- TTCorpSolutions
+
+Use the consistent public brand name:
+
+TTCorp Solutions
+
+Do not rename product names or customer company names.
+
+HERO CONTENT ONLY
+
+Keep the current hero design unchanged.
+
+Update only the hero text to:
+
+Small label:
+Software Products · Custom Applications · Digital Solutions
+
+Main heading:
+Building software that moves businesses forward
+
+Description:
+TTCorp Solutions builds mobile apps, web platforms, business software, websites, automation systems, and digital solutions for growing companies.
+
+Supporting text:
+Serving businesses in India and the United States
+
+Primary button:
+Explore Our Work
+
+Secondary button:
+Start a Project
+
+Keep the existing product cards in the hero. Do not redesign them.
+
+TYPOGRAPHY
+
+Use a professional and consistent typography system.
+
+Preferred font:
+Inter
+
+Font rules:
+- Hero heading: retain the existing size and layout
+- Main section heading: 40px to 46px on desktop
+- Main section heading: 30px to 34px on mobile
+- Card heading: 20px to 22px
+- Body copy: 16px to 18px
+- Navigation: 15px to 16px
+- Use font-weight 700 for important headings
+- Use font-weight 600 for card headings and buttons
+- Use font-weight 400 or 500 for body text
+- Avoid excessively heavy or oversized typography
+
+PREMIUM DESIGN SYSTEM
+
+Use the existing orange and navy brand direction.
+
+Suggested color variables:
+- Brand orange: #F97316
+- Dark orange: #EA580C
+- Navy: #0F172A
+- Dark navy: #020617
+- Blue accent: #2563EB
+- Body text: #475569
+- Muted text: #64748B
+- Light background: #F8FAFC
+- Border: #E2E8F0
+- White: #FFFFFF
+
+Design requirements:
+- Clean professional spacing
+- Strong visual hierarchy
+- Premium but restrained shadows
+- Consistent card radius between 14px and 18px
+- Subtle borders
+- Smooth hover states
+- Avoid excessive gradients
+- Avoid glassmorphism in light sections
+- Avoid large empty areas
+- Avoid giving every section the same white-card appearance
+
+Use alternating section backgrounds:
+- White
+- Light gray
+- Very subtle orange tint
+- Dark navy
+- White
+
+CONTENT WIDTH AND SPACING
+
+Use:
+- Maximum content width around 1200px to 1280px
+- Consistent desktop horizontal padding
+- Proper tablet and mobile padding
+- Section vertical padding around 80px to 110px on desktop
+- Section vertical padding around 56px to 72px on mobile
+
+Keep section content aligned to the same central container.
+
+HEADER
+
+Do not break the existing header functionality.
+
+Improve only the visible branding and polish:
+- Make the horizontal TTCorp Solutions logo clearly visible
+- Use a transparent logo file
+- Desktop logo height around 42px to 48px
+- Mobile logo height around 34px to 38px
+- Keep width automatic
+- Add an “Our Work” navigation item
+- Change the final navigation action into a visible orange “Start a Project” button
+- Preserve dropdowns, routes, sticky behavior, and mobile navigation
+
+Do not use the stacked square logo inside the header.
+
+SECTION 1: TRUST STRIP
+
+Add a compact trust section immediately after the hero.
+
+Heading:
+Products and solutions built for real businesses
+
+Show:
+- VahanBooks
+- MySiteWorks
+- OnePrime
+- Dasara Luxury Eats
+- Forty Niner Trucking LLC
+
+Use either clean text logos or brand-name chips.
+
+Keep this section compact and credible. Do not use oversized cards.
+
+SECTION 2: FEATURED PRODUCTS
+
+Replace the existing basic flagship-products presentation with a more premium product showcase.
+
+Section heading:
+Software products built for real operations
+
+Description:
+Our products simplify transport, construction, local services, business management, and everyday workflows.
+
+Create premium product cards for:
+
+1. VahanBooks
+Description:
+Transport management and digital khata software for truck owners, brokers, fleet operators, and logistics businesses.
+
+Highlight:
+- Trip management
+- Party and supplier khata
+- Payments and invoices
+- Documents and reports
+- WhatsApp reminders
+
+2. MySiteWorks
+Description:
+Construction project and expense management software for owners, contractors, partners, and project teams.
+
+Highlight:
+- Project dashboards
+- Expense tracking
+- Progress updates
+- Documents
+- Payments and reports
+
+3. OnePrime
+Description:
+A mobile-first marketplace connecting customers with local providers, restaurants, rides, events, rentals, jobs, and professional services.
+
+Highlight:
+- Provider marketplace
+- Food and local services
+- Events and venues
+- Rides and rentals
+- Community features
+
+Each product card should include:
+- Product name
+- Clear description
+- Feature chips
+- Platform labels
+- Product screenshot placeholder or existing screenshot when available
+- Primary button: View Product
+- Secondary button: View Case Study
+
+Use a large image-led layout rather than three small generic cards.
+
+SECTION 3: CLIENT WORK
+
+Create a section titled:
+
+Selected client work
+
+Description:
+Websites, business systems, and digital experiences designed and developed for growing companies.
+
+Add case-study cards for:
+
+Dasara Luxury Eats
+Description:
+A responsive food and catering platform with menu management, ordering workflows, promotional features, and an administration experience.
+
+Forty Niner Trucking LLC
+Description:
+A professional trucking company website with service presentation, job applications, Firebase-powered workflows, and responsive design.
+
+Each card should show:
+- Client name
+- Project category
+- Short result-focused description
+- Technologies used
+- Screenshot or visual placeholder
+- View Project button
+
+Do not invent performance statistics or client testimonials.
+
+SECTION 4: SERVICES
+
+Section heading:
+Complete software and digital services
+
+Description:
+From product strategy to launch and ongoing support, TTCorp Solutions delivers complete digital solutions under one team.
+
+Organize services into four premium groups:
+
+1. Custom Software Development
+- Web applications
+- SaaS platforms
+- Business software
+- Admin dashboards
+- Workflow automation
+
+2. Mobile App Development
+- Android applications
+- iOS applications
+- Cross-platform apps
+- App Store deployment
+- Play Store deployment
+
+3. Website Design and Development
+- Business websites
+- E-commerce websites
+- Responsive redesign
+- Landing pages
+- Hosting and deployment
+
+4. Digital Growth
+- Digital marketing
+- Social media campaigns
+- SEO foundations
+- Marketing creatives
+- Lead-generation setup
+
+Use four strong service cards or alternating feature rows.
+
+Do not display eight identical cards in a flat grid.
+
+SECTION 5: WHY TTCORP SOLUTIONS
+
+Replace the current “Enterprise clarity without enterprise bloat” section.
+
+New heading:
+Practical technology built around your business
+
+Description:
+We design software around real users, workflows, approvals, documents, payments, and daily operations—not around unnecessary complexity.
+
+Show these advantages:
+- Business-first product planning
+- Mobile-first user experience
+- Clean and scalable architecture
+- Transparent development milestones
+- Cross-platform delivery
+- Launch and ongoing support
+
+Use a split layout:
+- Strong content on one side
+- Premium checklist or visual on the other
+
+SECTION 6: INDUSTRIES
+
+Section heading:
+Industries we understand
+
+Description:
+Experience building practical software and digital solutions for operational businesses.
+
+Use these industries:
+- Transportation and Logistics
+- Construction and Contracting
+- Food and Hospitality
+- Local Service Businesses
+- Community Marketplaces
+- Professional Services
+- Retail and Small Businesses
+
+Use compact industry cards with distinctive icons.
+
+Avoid oversized empty cards.
+
+SECTION 7: DEVELOPMENT PROCESS
+
+Section heading:
+From idea to a production-ready product
+
+Description:
+A clear delivery process with visible progress, regular feedback, testing, and controlled releases.
+
+Use these four steps:
+
+1. Discovery and Planning
+We understand the business, users, workflows, goals, requirements, and technical constraints.
+
+2. Design and Prototyping
+We create user flows, wireframes, responsive interfaces, and interactive design concepts.
+
+3. Development and Testing
+We build in structured milestones and test across supported browsers, devices, and platforms.
+
+4. Launch and Support
+We deploy the product, support store submissions, monitor issues, and provide ongoing improvements.
+
+Display this as a premium connected timeline on desktop and stacked steps on mobile.
+
+SECTION 8: TECHNOLOGY
+
+Add a compact section titled:
+
+Technology built for modern products
+
+Show actual technology capabilities:
+- React
+- React Native
+- Expo
+- TypeScript
+- Firebase
+- Node.js
+- Vite
+- Tailwind CSS
+- Google Cloud
+- GitHub
+- Apple App Store
+- Google Play
+
+Keep this section visually secondary to products and client work.
+
+SECTION 9: FAQ
+
+Keep the existing FAQ functionality.
+
+Update the heading:
+Frequently asked questions
+
+Update the description:
+Clear answers about software development, mobile apps, websites, digital marketing, project timelines, and ongoing support.
+
+Include questions covering:
+- What services does TTCorp Solutions provide?
+- Do you build Android and iOS applications?
+- Can you develop custom business software?
+- Do you redesign existing websites and applications?
+- Do you provide digital marketing services?
+- Can you deploy apps to the App Store and Play Store?
+- Do you provide maintenance after launch?
+- How can a business start a project?
+
+Preserve the current accordion behavior.
+
+SECTION 10: FINAL CALL TO ACTION
+
+Create a visually strong dark-navy CTA section before the footer.
+
+Heading:
+Have a software or digital project in mind?
+
+Description:
+Tell us what your business needs. TTCorp Solutions can help plan, design, build, launch, and support the right solution.
+
+Primary button:
+Start a Project
+
+Secondary button:
+Contact TTCorp Solutions
+
+Use restrained orange accents and clear contrast.
+
+FOOTER
+
+Update the footer into a professional multi-column layout.
+
+Include:
+- Horizontal TTCorp Solutions logo
+- Short company description
+- Products
+- Services
+- Company links
+- Contact information
+- Social links
+- Privacy Policy
+- Terms and Conditions
+- Copyright
+
+Footer company description:
+TTCorp Solutions builds mobile apps, web platforms, business software, websites, automation systems, and digital solutions for companies in India and the United States.
+
+QUALITY REQUIREMENTS
+
+The redesign must be:
+- Fully responsive
+- Accessible
+- Keyboard navigable
+- Compatible with modern desktop and mobile browsers
+- Free from horizontal scrolling
+- Consistent across all sections
+- Optimized for image loading
+- Production-ready
+
+Use semantic HTML where possible.
+
+Add meaningful alt text to all images.
+
+Maintain sufficient color contrast.
+
+Use hover effects only on devices that support hover.
+
+Avoid layout shifts while images load.
+
+Use reusable components instead of duplicated markup.
+
+FINAL VERIFICATION
+
+After implementation:
+
+1. Search the complete project for all old “TechTaxCorp” references.
+2. Replace only company-brand references with “TTCorp Solutions.”
+3. Confirm product and customer names remain unchanged.
+4. Confirm the hero section visual design was not changed.
+5. Confirm all existing routes and buttons still work.
+6. Confirm desktop, tablet, and mobile layouts.
+7. Confirm there is no text clipping or horizontal overflow.
+8. Confirm the header logo is clearly visible.
+9. Confirm the build completes without TypeScript, lint, or compilation errors.
+10. Provide a concise list of files changed and describe the UI improvements.
