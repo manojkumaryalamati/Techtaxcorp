@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import brandLogo from "@/assets/images/ttcorp-logo.jpeg";
+import brandLogo from "@/assets/images/ttcorp-logo-horizontal.png";
 
 type TTCorpSolutionsLogoProps = {
   className?: string;
@@ -11,14 +11,14 @@ export function TTCorpSolutionsLogo({ className, variant = "header" }: TTCorpSol
     <img
       src={brandLogo}
       alt="TTCorpSolutions logo — ledger software and business application development company"
-      width={520}
-      height={140}
+      width={600}
+      height={160}
       className={cn(
-        "block h-auto w-auto max-w-[min(100vw-5rem,18rem)] shrink-0 object-contain object-left",
+        "block h-auto w-auto max-w-[min(100vw-4rem,22rem)] shrink-0 object-contain object-left",
         variant === "header"
-          ? "min-h-[3.5rem] h-16 sm:h-[4.25rem] md:h-[4.75rem] lg:h-20"
-          : "min-h-[7rem] h-32 sm:h-36 md:h-40 lg:h-44 max-w-md",
-        "select-none drop-shadow-[0_1px_2px_rgba(15,23,42,0.06)]",
+          ? "min-h-[2.25rem] h-9 sm:h-10 md:h-11 lg:h-12"
+          : "min-h-[3.5rem] h-14 sm:h-16 md:h-[4.5rem] max-w-sm",
+        "select-none",
         className,
       )}
       decoding="async"
