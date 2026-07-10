@@ -195,6 +195,15 @@ export function Header() {
                   </div>
                 ))}
               </nav>
+              <Button
+                className="w-full rounded-full bg-orange-500 text-white hover:bg-orange-600"
+                data-testid="mobile-button-start-project"
+                asChild
+              >
+                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  Start a Project
+                </Link>
+              </Button>
             </div>
           </SheetContent>
         </Sheet>
