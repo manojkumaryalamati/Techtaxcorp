@@ -120,7 +120,11 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <ol className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+          <ol className="relative mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+            <div
+              className="pointer-events-none absolute left-0 right-0 top-[26px] hidden h-px bg-gradient-to-r from-transparent via-orange-300 to-transparent dark:via-orange-500/40 lg:block"
+              aria-hidden
+            />
             {processSteps.map((step, i) => (
               <motion.li
                 key={step.title}
@@ -130,7 +134,7 @@ export default function Home() {
                 transition={{ duration: 0.45, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
                 className="relative rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/[0.06] sm:p-6"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-sm font-bold text-white shadow-md shadow-orange-500/25">
+                <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-sm font-bold text-white shadow-md shadow-orange-500/25 ring-4 ring-white dark:ring-brand-navy-deep">
                   {step.step}
                 </span>
                 <h3 className="mt-3 text-sm font-semibold leading-snug sm:text-base text-brand-navy dark:text-white">{step.title}</h3>
