@@ -1,104 +1,126 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { mysiteworksFeatures, vahanbooksFeatures } from "@/lib/home-content";
+import { productItems } from "@/lib/home-content";
 import { fadeUp } from "./motion-variants";
+
+const accentStyles = {
+  orange: {
+    border: "border-orange-500/20 hover:border-orange-500/40 dark:border-orange-500/25",
+    badge: "bg-orange-500 text-white hover:bg-orange-500",
+    outlineBadge: "border-orange-500/30 text-orange-700 dark:text-orange-300",
+    button: "bg-orange-500 hover:bg-orange-600",
+  },
+  sky: {
+    border: "border-sky-500/25 hover:border-sky-500/45 dark:border-sky-500/30",
+    badge: "bg-sky-600 text-white hover:bg-sky-600",
+    outlineBadge: "border-sky-500/35 text-sky-800 dark:text-sky-300",
+    button: "bg-sky-600 hover:bg-sky-500",
+  },
+  violet: {
+    border: "border-violet-500/25 hover:border-violet-500/45 dark:border-violet-500/30",
+    badge: "bg-violet-600 text-white hover:bg-violet-600",
+    outlineBadge: "border-violet-500/35 text-violet-800 dark:text-violet-300",
+    button: "bg-violet-600 hover:bg-violet-500",
+  },
+} as const;
 
 export function ProductShowcase() {
   return (
     <section
       id="products"
-      className="scroll-mt-24 border-b border-white/5 bg-gradient-to-b from-slate-50 via-white to-slate-50 py-14 sm:py-20 dark:from-slate-950 dark:via-brand-navy dark:to-brand-navy-deep"
+      className="scroll-mt-24 border-b border-slate-200 bg-white py-14 dark:border-white/5 dark:bg-brand-navy-deep sm:py-20 lg:py-[88px]"
       aria-labelledby="products-heading"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
         <motion.div className="mx-auto max-w-2xl text-center" {...fadeUp}>
           <h2
             id="products-heading"
-            className="font-serif text-2xl font-bold tracking-tight text-brand-navy dark:text-white sm:text-3xl lg:text-4xl"
+            className="text-[30px] font-bold tracking-tight text-brand-navy dark:text-white sm:text-4xl lg:text-[44px]"
           >
-            Flagship products
+            Software products built for real operations
           </h2>
-          <p className="mt-3 text-base text-muted-foreground sm:mt-4 sm:text-lg">
-            VahanBooks and MySiteWorks are built for field teams—then we extend with custom software when you need a
-            tailored fit.
+          <p className="mt-3 text-base font-normal text-slate-600 dark:text-muted-foreground sm:mt-4 sm:text-lg">
+            Our products simplify transport, construction, local services, business management, and
+            everyday workflows.
           </p>
         </motion.div>
 
-        <div className="mt-10 grid gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-2">
-          <motion.article id="vahanbooks" className="scroll-mt-24" {...fadeUp}>
-            <Card className="group h-full overflow-hidden border-orange-500/20 bg-white/80 shadow-2xl shadow-orange-500/5 ring-1 ring-black/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/35 hover:shadow-orange-500/15 dark:border-orange-500/25 dark:bg-white/[0.07] dark:ring-white/10">
-              <CardContent className="flex h-full flex-col p-6 sm:p-9">
-                <div className="flex flex-wrap items-center gap-2">
-                  <Badge className="rounded-md bg-orange-500 text-white hover:bg-orange-500">Transport</Badge>
-                  <Badge variant="outline" className="rounded-md border-orange-500/30 text-orange-700 dark:text-orange-300">
-                    Khata &amp; trips
-                  </Badge>
-                </div>
-                <h3 className="mt-5 font-serif text-xl font-bold sm:text-2xl lg:text-3xl">VahanBooks</h3>
-                <p className="mt-2 text-sm font-semibold leading-snug text-orange-600 dark:text-orange-400">
-                  VahanBooks by TTCorpSolutions — Simple transport khata and trip management for Indian truck businesses.
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  Trip and khata software for owners, brokers, and fleet operators. One app for trips, payments,
-                  invoices, documents, and reports.
-                </p>
-                <ul className="mt-6 flex flex-wrap gap-2" aria-label="VahanBooks features">
-                  {vahanbooksFeatures.map((f) => (
-                    <li key={f}>
-                      <Badge variant="secondary" className="rounded-full font-normal">{f}</Badge>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Button variant="outline" className="rounded-full" asChild>
-                    <Link href="/vahanbooks">VahanBooks product page</Link>
-                  </Button>
-                  <Button className="rounded-full bg-orange-500 hover:bg-orange-600" asChild>
-                    <Link href="/contact?interest=vahanbooks">Ask about VahanBooks</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.article>
+        <div className="mt-10 space-y-6 sm:mt-14 sm:space-y-8">
+          {productItems.map((product, i) => {
+            const accent = accentStyles[product.accent];
+            const imageFirst = i % 2 === 1;
+            return (
+              <motion.article
+                key={product.id}
+                id={product.id}
+                className="scroll-mt-24"
+                {...fadeUp}
+              >
+                <div
+                  className={`grid overflow-hidden rounded-[18px] border bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(15,23,42,0.10)] dark:bg-white/[0.04] lg:grid-cols-2 ${accent.border}`}
+                >
+                  <div
+                    className={`flex min-h-[220px] items-center justify-center bg-gradient-to-br from-slate-100 to-slate-50 p-8 dark:from-white/[0.06] dark:to-white/[0.02] ${
+                      imageFirst ? "lg:order-2" : ""
+                    }`}
+                    role="img"
+                    aria-label={`${product.name} product screenshot placeholder`}
+                  >
+                    <span className="text-6xl font-bold tracking-tight text-slate-300 dark:text-white/15">
+                      {product.name}
+                    </span>
+                  </div>
 
-          <motion.article id="mysiteworks" className="scroll-mt-24" {...fadeUp}>
-            <Card className="group h-full overflow-hidden border-sky-500/25 bg-white/80 shadow-2xl shadow-sky-500/10 ring-1 ring-black/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/40 hover:shadow-sky-500/20 dark:border-sky-500/30 dark:bg-white/[0.07] dark:ring-white/10">
-              <CardContent className="flex h-full flex-col p-6 sm:p-9">
-                <div className="flex flex-wrap items-center gap-2">
-                  <Badge className="rounded-md bg-sky-600 text-white hover:bg-sky-600">Construction</Badge>
-                  <Badge variant="outline" className="rounded-md border-sky-500/35 text-sky-800 dark:text-sky-300">
-                    Site-first
-                  </Badge>
+                  <div className="flex flex-col justify-center p-6 sm:p-9">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge className={`rounded-md ${accent.badge}`}>{product.category}</Badge>
+                      <div className="flex flex-wrap gap-1.5">
+                        {product.platforms.map((platform) => (
+                          <Badge
+                            key={platform}
+                            variant="outline"
+                            className={`rounded-md text-xs font-medium ${accent.outlineBadge}`}
+                          >
+                            {platform}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    <h3 className="mt-5 text-[22px] font-bold leading-tight text-brand-navy dark:text-white sm:text-[26px]">
+                      {product.name}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-muted-foreground sm:text-base">
+                      {product.description}
+                    </p>
+                    <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${product.name} features`}>
+                      {product.features.map((f) => (
+                        <li key={f}>
+                          <Badge variant="secondary" className="rounded-full font-normal">
+                            {f}
+                          </Badge>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8 flex flex-wrap gap-3">
+                      <Button className={`rounded-full text-white ${accent.button}`} asChild>
+                        <Link href={product.href}>
+                          View Product <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+                        </Link>
+                      </Button>
+                      {product.caseStudyHref && (
+                        <Button variant="outline" className="rounded-full" asChild>
+                          <Link href={product.caseStudyHref}>View Case Study</Link>
+                        </Button>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <h3 className="mt-5 font-serif text-xl font-bold sm:text-2xl lg:text-3xl">MySiteWorks</h3>
-                <p className="mt-2 text-sm font-semibold leading-snug text-sky-700 dark:text-sky-400">
-                  MySiteWorks by TTCorpSolutions — Simple construction project management for modern builders.
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  Mobile-first construction software for owners, contractors, and crews—projects, expenses, progress,
-                  documents, and payments in one flow.
-                </p>
-                <ul className="mt-6 flex flex-wrap gap-2" aria-label="MySiteWorks features">
-                  {mysiteworksFeatures.map((f) => (
-                    <li key={f}>
-                      <Badge variant="secondary" className="rounded-full font-normal">{f}</Badge>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Button variant="outline" className="rounded-full" asChild>
-                    <Link href="/mysiteworks">MySiteWorks product page</Link>
-                  </Button>
-                  <Button className="rounded-full bg-sky-600 text-white hover:bg-sky-500" asChild>
-                    <Link href="/contact?interest=mysiteworks">Ask about MySiteWorks</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.article>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

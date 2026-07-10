@@ -6,8 +6,8 @@ import { useSEO } from "@/hooks/use-seo";
 
 export default function NotFound() {
   useSEO({
-    title: "Page not found | TTCorpSolutions",
-    description: "The page you requested is not available. Browse TTCorpSolutions for ledger software, VahanBooks, MySiteWorks, and custom application development.",
+    title: "Page not found | TTCorp Solutions",
+    description: "The page you requested is not available. Browse TTCorp Solutions for ledger software, VahanBooks, MySiteWorks, and custom application development.",
     skipCanonical: true,
     robots: "noindex, follow",
   });
@@ -21,7 +21,7 @@ export default function NotFound() {
             <h1 className="text-2xl font-bold text-gray-900">Page not found</h1>
           </div>
           <p className="mt-4 text-sm text-gray-600">
-            That URL is not part of this site. Use the navigation or return home to find ledger software products and services from TTCorpSolutions.
+            That URL is not part of this site. Use the navigation or return home to find ledger software products and services from TTCorp Solutions.
           </p>
           <Button asChild className="mt-6 w-full">
             <Link href="/">Back to home</Link>

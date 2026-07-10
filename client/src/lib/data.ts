@@ -175,7 +175,7 @@ export const testimonials: Testimonial[] = [
     name: "Michael Rodriguez",
     role: "Owner",
     company: "Rodriguez Construction",
-    content: "TTCorpSolutions transformed our online presence. The new website generates 3x more leads than before, and their accounting team keeps our finances in perfect order.",
+    content: "TTCorp Solutions transformed our online presence. The new website generates 3x more leads than before, and their accounting team keeps our finances in perfect order.",
   },
   {
     id: "2",
@@ -196,13 +196,13 @@ export const testimonials: Testimonial[] = [
     name: "Amanda Foster",
     role: "Owner",
     company: "Foster Design Studio",
-    content: "The team at TTCorpSolutions understood our creative vision perfectly. Our portfolio website is beautiful, and their tax preparation saved us thousands.",
+    content: "The team at TTCorp Solutions understood our creative vision perfectly. Our portfolio website is beautiful, and their tax preparation saved us thousands.",
   },
 ];
 
 export const faqs: FAQ[] = [
   {
-    question: "What services does TTCorpSolutions offer?",
+    question: "What services does TTCorp Solutions offer?",
     answer: "We offer two main service lines: website design and development (business websites, personal sites, portfolios, landing pages) and comprehensive accounting services (bookkeeping, tax preparation, payroll support, and financial consulting).",
   },
   {
@@ -287,9 +287,9 @@ Self-employed individuals can often deduct health insurance premiums for themsel
 
 ---
 
-*Need help maximizing your business deductions? Contact TTCorpSolutions for a free consultation.*
+*Need help maximizing your business deductions? Contact TTCorp Solutions for a free consultation.*
     `,
-    author: "TTCorpSolutions Team",
+    author: "TTCorp Solutions Team",
     date: "2024-01-15",
     category: "accounting",
     readTime: "5 min read",
@@ -325,9 +325,9 @@ Customers expect to find information online. A website makes it easy for them to
 
 ---
 
-*Ready to elevate your online presence? TTCorpSolutions creates stunning, conversion-focused websites for small businesses.*
+*Ready to elevate your online presence? TTCorp Solutions creates stunning, conversion-focused websites for small businesses.*
     `,
-    author: "TTCorpSolutions Team",
+    author: "TTCorp Solutions Team",
     date: "2024-01-10",
     category: "websites",
     readTime: "4 min read",
@@ -367,9 +367,9 @@ Understand your revenue, expenses, profit margins, and accounts receivable aging
 
 ---
 
-*Need help setting up your bookkeeping system? Contact TTCorpSolutions for expert guidance.*
+*Need help setting up your bookkeeping system? Contact TTCorp Solutions for expert guidance.*
     `,
-    author: "TTCorpSolutions Team",
+    author: "TTCorp Solutions Team",
     date: "2024-01-05",
     category: "accounting",
     readTime: "6 min read",
@@ -409,9 +409,9 @@ For local businesses, claim your Google Business Profile and ensure your name, a
 
 ---
 
-*TTCorpSolutions builds SEO-optimized websites that help your business get found online.*
+*TTCorp Solutions builds SEO-optimized websites that help your business get found online.*
     `,
-    author: "TTCorpSolutions Team",
+    author: "TTCorp Solutions Team",
     date: "2024-01-01",
     category: "websites",
     readTime: "5 min read",

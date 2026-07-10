@@ -14,9 +14,9 @@ const orgId = `${SITE_ORIGIN}/#organization`;
 
 export default function Services() {
   useSEO({
-    title: "TTCorpSolutions Services | Web Apps, Mobile Apps, Ledger & SaaS Development",
+    title: "TTCorp Solutions Services | Web Apps, Mobile Apps, Ledger & SaaS Development",
     description:
-      "TTCorpSolutions provides custom web application development, mobile app development, ledger software, business software, website design, digital marketing support, and SaaS product development—plus accounting services.",
+      "TTCorp Solutions provides custom web application development, mobile app development, ledger software, business software, website design, digital marketing support, and SaaS product development—plus accounting services.",
     canonicalPath: "/services",
     keywords: [
       "custom web application development",
@@ -26,7 +26,7 @@ export default function Services() {
       "SaaS product development",
       "website design and development",
       "digital marketing support",
-      "TTCorpSolutions services",
+      "TTCorp Solutions services",
     ],
   });
 
@@ -50,10 +50,10 @@ export default function Services() {
           <div className="mx-auto max-w-3xl text-center">
             <Badge variant="secondary" className="mb-4">Services</Badge>
             <h1 id="services-hero-heading" className="mb-6 font-serif text-4xl font-bold sm:text-5xl">
-              Business software, web &amp; mobile development from TTCorpSolutions
+              Business software, web &amp; mobile development from TTCorp Solutions
             </h1>
             <p className="text-lg text-muted-foreground">
-              TTCorpSolutions designs and develops ledger software, SaaS products like VahanBooks and MySiteWorks, custom
+              TTCorp Solutions designs and develops ledger software, SaaS products like VahanBooks and MySiteWorks, custom
               applications, and modern websites—then helps you ship improvements as usage grows. We also offer
               accounting and tax support for clients who need it.
             </p>
@@ -76,7 +76,7 @@ export default function Services() {
             Each engagement starts with how work really happens—then we design a focused system your team can adopt
             quickly. Explore the categories below and{" "}
             <Link href="/contact" className="font-semibold text-primary underline-offset-4 hover:underline">
-              contact TTCorpSolutions
+              contact TTCorp Solutions
             </Link>{" "}
             for a roadmap and estimate.
           </p>
@@ -113,7 +113,7 @@ export default function Services() {
                 Accounting &amp; tax services
               </h2>
               <p className="mb-6 text-lg text-muted-foreground">
-                For clients who need it, TTCorpSolutions also provides bookkeeping, tax preparation, payroll support, and
+                For clients who need it, TTCorp Solutions also provides bookkeeping, tax preparation, payroll support, and
                 financial advisory—alongside your software initiatives.
               </p>
               <ul className="mb-8 space-y-3">

@@ -168,7 +168,7 @@ export function Hero3D() {
               className="mb-6 gap-1.5 rounded-full border border-sky-400/25 bg-sky-950/60 px-3 py-1.5 text-[11px] font-medium text-sky-300 shadow-lg backdrop-blur-md sm:text-xs"
             >
               <Sparkles className="h-3.5 w-3.5 shrink-0 text-sky-400" aria-hidden />
-              Ledger software · Product studio · Custom apps
+              Software Products · Custom Applications · Digital Solutions
             </Badge>
           </motion.div>
 
@@ -181,7 +181,7 @@ export function Hero3D() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="font-serif text-4xl font-extrabold leading-[1.07] tracking-tight text-white text-balance sm:text-5xl lg:text-6xl xl:text-7xl"
           >
-            Connecting{" "}
+            Building{" "}
             <span
               style={{
                 background: "linear-gradient(130deg, #38bdf8 0%, #818cf8 55%, #f97316 100%)",
@@ -190,9 +190,9 @@ export function Hero3D() {
                 backgroundClip: "text",
               }}
             >
-              businesses
+              software
             </span>{" "}
-            across the globe
+            that moves businesses forward
           </motion.h1>
 
           {/* Sub-headline */}
@@ -202,10 +202,8 @@ export function Hero3D() {
             transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-slate-300 sm:mt-6 sm:text-lg lg:text-xl"
           >
-            TTCorpSolutions builds ledger platforms and field-ready software —{" "}
-            <strong className="font-semibold text-white">VahanBooks</strong> for transport,{" "}
-            <strong className="font-semibold text-white">MySiteWorks</strong> for construction — plus
-            custom apps, websites, and enterprise workflows.
+            TTCorp Solutions builds mobile apps, web platforms, business software, websites,
+            automation systems, and digital solutions for growing companies.
           </motion.p>
 
           <motion.p
@@ -214,7 +212,7 @@ export function Hero3D() {
             transition={{ duration: 0.6, delay: 0.38 }}
             className="mt-3 text-sm text-slate-500 sm:text-base"
           >
-            Mobile-first · India-built · SMB-ready
+            Serving businesses in India and the United States
           </motion.p>
 
           {/* CTAs */}
@@ -231,7 +229,7 @@ export function Hero3D() {
               asChild
             >
               <Link href="/#products">
-                View products <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+                Explore Our Work <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
               </Link>
             </Button>
             <Button
@@ -241,7 +239,7 @@ export function Hero3D() {
               className="h-12 rounded-full border border-white/20 bg-white/[0.06] px-7 text-base text-white backdrop-blur-sm hover:border-white/35 hover:bg-white/[0.11]"
               asChild
             >
-              <Link href="/contact">Talk to us</Link>
+              <Link href="/contact">Start a Project</Link>
             </Button>
           </motion.div>
 

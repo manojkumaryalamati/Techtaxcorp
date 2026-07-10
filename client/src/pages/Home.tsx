@@ -6,9 +6,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Layout } from "@/components/layout/Layout";
 import { industryItems, processSteps } from "@/lib/home-content";
 import { Hero3D } from "@/components/home/Hero3D";
+import { TrustStrip } from "@/components/home/TrustStrip";
 import { ProductShowcase } from "@/components/home/ProductShowcase";
+import { ClientWork } from "@/components/home/ClientWork";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { WhyTTCorpSolutions } from "@/components/home/WhyTTCorpSolutions";
+import { TechnologySection } from "@/components/home/TechnologySection";
 import { CTASection } from "@/components/home/CTASection";
 import { HomeFAQ } from "@/components/home/HomeFAQ";
 import { fadeUp } from "@/components/home/motion-variants";
@@ -30,46 +33,48 @@ export default function Home() {
   }, [location]);
 
   useSEO({
-    title: "TTCorpSolutions | Ledger Software & Business Application Development Company",
+    title: "TTCorp Solutions | Software Products & Custom Application Development",
     description:
-      "TTCorpSolutions designs and develops ledger software, business applications, websites, mobile apps, and SaaS products including VahanBooks and MySiteWorks—plus custom web application development and digital marketing support.",
+      "TTCorp Solutions builds mobile apps, web platforms, business software, websites, automation systems, and digital solutions—including VahanBooks, MySiteWorks, and OnePrime—for businesses in India and the United States.",
     canonicalPath: "/",
     keywords: [
-      "TTCorpSolutions",
-      "ledger software company",
-      "business software development company",
+      "TTCorp Solutions",
+      "software development company",
       "custom web application development",
       "mobile app development company",
+      "business software development",
       "SaaS product development",
-      "transport ledger software",
-      "construction management software",
       "VahanBooks",
       "MySiteWorks",
+      "OnePrime",
     ],
   });
 
   return (
     <Layout>
       <Hero3D />
+      <TrustStrip />
       <ProductShowcase />
+      <ClientWork />
       <ServicesSection />
       <WhyTTCorpSolutions />
 
       <section
         id="industries"
-        className="scroll-mt-24 border-b border-white/5 bg-white py-14 sm:py-20 dark:bg-brand-navy"
+        className="scroll-mt-24 border-b border-slate-200 bg-white py-14 dark:border-white/5 dark:bg-brand-navy sm:py-20 lg:py-[88px]"
         aria-labelledby="industries-heading"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <motion.div className="mx-auto max-w-2xl text-center" {...fadeUp}>
             <h2
               id="industries-heading"
-              className="font-serif text-2xl font-bold tracking-tight text-brand-navy dark:text-white sm:text-3xl lg:text-4xl"
+              className="text-[30px] font-bold tracking-tight text-brand-navy dark:text-white sm:text-4xl lg:text-[44px]"
             >
-              Industries we serve
+              Industries we understand
             </h2>
-            <p className="mt-3 text-base text-muted-foreground sm:mt-4 sm:text-lg">
-              Built for Indian SMB workflows—clear enough for global partners and investors to understand.
+            <p className="mt-3 text-base font-normal text-slate-600 dark:text-muted-foreground sm:mt-4 sm:text-lg">
+              Practical software for the industries we work with most—clear enough for global
+              partners to understand.
             </p>
           </motion.div>
 
@@ -82,13 +87,13 @@ export default function Home() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.45, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
               >
-                <Card className="h-full overflow-hidden border-black/5 bg-white/90 shadow-md ring-1 ring-black/[0.03] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.05] dark:ring-white/10">
+                <Card className="h-full overflow-hidden border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:border-white/10 dark:bg-white/[0.05]">
                   <CardContent className="p-5 sm:p-6">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500/10 text-orange-600 dark:bg-orange-500/15 dark:text-orange-400">
                       <item.icon className="h-5 w-5" aria-hidden />
                     </div>
-                    <h3 className="mt-3 font-serif text-base font-bold sm:text-lg">{item.title}</h3>
-                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">{item.description}</p>
+                    <h3 className="mt-3 text-base font-bold sm:text-lg text-brand-navy dark:text-white">{item.title}</h3>
+                    <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-muted-foreground sm:text-sm">{item.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -99,18 +104,18 @@ export default function Home() {
 
       <section
         id="process"
-        className="scroll-mt-24 border-t border-white/5 bg-gradient-to-b from-slate-50 to-white py-14 sm:py-20 dark:from-brand-navy-deep dark:to-brand-navy"
+        className="scroll-mt-24 border-t border-slate-200 bg-slate-50 py-14 dark:border-white/5 dark:bg-brand-navy-deep sm:py-20 lg:py-[88px]"
         aria-labelledby="process-heading"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <motion.div className="mx-auto max-w-2xl text-center" {...fadeUp}>
             <h2
               id="process-heading"
-              className="font-serif text-2xl font-bold tracking-tight text-brand-navy dark:text-white sm:text-3xl lg:text-4xl"
+              className="text-[30px] font-bold tracking-tight text-brand-navy dark:text-white sm:text-4xl lg:text-[44px]"
             >
-              From idea to working software
+              From idea to a production-ready product
             </h2>
-            <p className="mt-3 text-base text-muted-foreground sm:mt-4 sm:text-lg">
+            <p className="mt-3 text-base font-normal text-slate-600 dark:text-muted-foreground sm:mt-4 sm:text-lg">
               Short cycles, visible progress, and decisions you can trace—not a black box.
             </p>
           </motion.div>
@@ -123,19 +128,20 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.45, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                className="relative rounded-2xl border border-black/5 bg-white/95 p-5 shadow-sm ring-1 ring-black/[0.03] backdrop-blur-md dark:border-white/10 dark:bg-white/[0.06] dark:ring-white/10 sm:p-6"
+                className="relative rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/[0.06] sm:p-6"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-sm font-bold text-white shadow-md shadow-orange-500/25">
                   {step.step}
                 </span>
-                <h3 className="mt-3 text-sm font-semibold leading-snug sm:text-base">{step.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">{step.description}</p>
+                <h3 className="mt-3 text-sm font-semibold leading-snug sm:text-base text-brand-navy dark:text-white">{step.title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-muted-foreground sm:text-sm">{step.description}</p>
               </motion.li>
             ))}
           </ol>
         </div>
       </section>
 
+      <TechnologySection />
       <HomeFAQ />
       <CTASection />
     </Layout>

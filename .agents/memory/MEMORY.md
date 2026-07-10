@@ -1,0 +1,1 @@
+- [TTCorp Solutions brand rename](ttcorp-brand-rename.md) — display text is "TTCorp Solutions" (space); component/identifier names keep "TTCorpSolutions" (no space) intentionally.
