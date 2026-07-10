@@ -17,7 +17,7 @@ export function ServicesSection() {
             id="services-heading"
             className="font-serif text-2xl font-bold tracking-tight text-brand-navy dark:text-white sm:text-3xl lg:text-4xl"
           >
-            What TechTaxCorp builds
+            What TTCorpSolutions builds
           </h2>
           <p className="mt-3 text-base text-muted-foreground sm:mt-4 sm:text-lg">
             From productized apps to bespoke software—design, build, launch, and iterate with one team. See the{" "}

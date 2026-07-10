@@ -25,15 +25,15 @@ export default function BlogPost() {
   useSEO(
     post
       ? {
-          title: `${post.title} | TechTaxCorp Blog`,
+          title: `${post.title} | TTCorpSolutions Blog`,
           description: post.excerpt,
           canonicalPath: `/blog/${post.slug}`,
           ogType: "article",
-          keywords: [post.category, "TechTaxCorp", "business software", "ledger software"],
+          keywords: [post.category, "TTCorpSolutions", "business software", "ledger software"],
         }
       : {
-          title: "Article not found | TechTaxCorp Blog",
-          description: "The requested article could not be found on the TechTaxCorp blog.",
+          title: "Article not found | TTCorpSolutions Blog",
+          description: "The requested article could not be found on the TTCorpSolutions blog.",
           canonicalPath: "/blog",
           robots: "noindex, follow",
         }

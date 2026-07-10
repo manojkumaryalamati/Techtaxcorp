@@ -1,8 +1,8 @@
-# TechTaxCorp - Website Design & Accounting Services
+# TTCorpSolutions - Website Design & Accounting Services
 
 ## Overview
 
-TechTaxCorp is a professional website for a company that offers two main service lines:
+TTCorpSolutions is a professional website for a company that offers two main service lines:
 1. **Website Design & Development** - Business websites, personal sites, portfolios, landing pages, and maintenance
 2. **Accounting & Tax Services** - Bookkeeping, tax preparation, business accounting, payroll, and financial advisory
 

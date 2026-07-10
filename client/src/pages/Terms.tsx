@@ -4,8 +4,8 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Terms() {
   useSEO({
-    title: "Terms of Service | TechTaxCorp",
-    description: "TechTaxCorp terms of service—service agreement, payment terms, client responsibilities, and policies for websites, software, and accounting-related offerings.",
+    title: "Terms of Service | TTCorpSolutions",
+    description: "TTCorpSolutions terms of service—service agreement, payment terms, client responsibilities, and policies for websites, software, and accounting-related offerings.",
     canonicalPath: "/terms",
     robots: "index, follow",
   });
@@ -27,12 +27,12 @@ export default function Terms() {
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <h2>Agreement to Terms</h2>
             <p>
-              By accessing or using the TechTaxCorp website and services, you agree to be bound by these Terms of
+              By accessing or using the TTCorpSolutions website and services, you agree to be bound by these Terms of
               Service. If you disagree with any part of these terms, you may not access our services.
             </p>
 
             <h2>Services Description</h2>
-            <p>TechTaxCorp provides the following services:</p>
+            <p>TTCorpSolutions provides the following services:</p>
             <ul>
               <li>Website design and development</li>
               <li>Website maintenance and support</li>
@@ -101,7 +101,7 @@ export default function Terms() {
 
             <h2>Limitation of Liability</h2>
             <p>
-              TechTaxCorp's liability is limited to the amount paid for the specific service giving rise to the claim.
+              TTCorpSolutions's liability is limited to the amount paid for the specific service giving rise to the claim.
               We are not liable for indirect, consequential, or incidental damages.
             </p>
 

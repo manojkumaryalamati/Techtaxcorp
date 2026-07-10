@@ -3,7 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 import { whyHighlights } from "@/lib/home-content";
 import { fadeUp } from "./motion-variants";
 
-export function WhyTechTaxCorp() {
+export function WhyTTCorpSolutions() {
   return (
     <section
       className="border-y border-white/5 bg-gradient-to-b from-slate-100/80 via-white to-slate-50 py-14 sm:py-20 dark:from-brand-navy-mid dark:via-brand-navy dark:to-brand-navy-deep"
@@ -19,7 +19,7 @@ export function WhyTechTaxCorp() {
               Enterprise clarity without enterprise bloat
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
-              Many teams still juggle WhatsApp threads, Excel sheets, and paper notes. TechTaxCorp builds focused
+              Many teams still juggle WhatsApp threads, Excel sheets, and paper notes. TTCorpSolutions builds focused
               ledger and operations software that brings daily work into one mobile-friendly system—trustworthy,
               fast, and easy to adopt.
             </p>

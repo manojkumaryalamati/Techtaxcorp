@@ -12,24 +12,24 @@ import { fadeUp } from "./motion-variants";
 
 const faqItems = [
   {
-    q: "What does TechTaxCorp do?",
-    a: "TechTaxCorp designs and develops ledger software, business applications, websites, mobile apps, and SaaS products—including VahanBooks for transport operations and MySiteWorks for construction teams.",
+    q: "What does TTCorpSolutions do?",
+    a: "TTCorpSolutions designs and develops ledger software, business applications, websites, mobile apps, and SaaS products—including VahanBooks for transport operations and MySiteWorks for construction teams.",
   },
   {
     q: "What is VahanBooks?",
-    a: "VahanBooks is transport khata and trip management software designed and developed by TechTaxCorp. It helps owners, brokers, and fleet operators manage trips, payments, khata, invoices, documents, and reports from one app.",
+    a: "VahanBooks is transport khata and trip management software designed and developed by TTCorpSolutions. It helps owners, brokers, and fleet operators manage trips, payments, khata, invoices, documents, and reports from one app.",
   },
   {
     q: "What is MySiteWorks?",
-    a: "MySiteWorks is construction project management software designed and developed by TechTaxCorp. It helps owners, contractors, and crews manage projects, expenses, progress, documents, payments, and reports in one place.",
+    a: "MySiteWorks is construction project management software designed and developed by TTCorpSolutions. It helps owners, contractors, and crews manage projects, expenses, progress, documents, payments, and reports in one place.",
   },
   {
-    q: "Does TechTaxCorp build custom software?",
-    a: "Yes. TechTaxCorp builds custom web applications, mobile apps, ledger software, business dashboards, admin portals, and integrations—alongside our own products when you need something tailored.",
+    q: "Does TTCorpSolutions build custom software?",
+    a: "Yes. TTCorpSolutions builds custom web applications, mobile apps, ledger software, business dashboards, admin portals, and integrations—alongside our own products when you need something tailored.",
   },
   {
-    q: "Where is TechTaxCorp based and how do I contact you?",
-    a: "TechTaxCorp works with teams remotely and ships software globally. Email techtaxcorp@gmail.com or use the contact page to describe your project—we reply with next steps and a sensible first milestone.",
+    q: "Where is TTCorpSolutions based and how do I contact you?",
+    a: "TTCorpSolutions works with teams remotely and ships software globally. Email techtaxcorp@gmail.com or use the contact page to describe your project—we reply with next steps and a sensible first milestone.",
   },
 ] as const;
 
@@ -57,7 +57,7 @@ export function HomeFAQ() {
             Frequently asked questions
           </h2>
           <p className="mt-3 text-muted-foreground sm:text-lg">
-            Straight answers about TechTaxCorp products and custom development.
+            Straight answers about TTCorpSolutions products and custom development.
           </p>
         </motion.div>
 
@@ -79,7 +79,7 @@ export function HomeFAQ() {
         <p className="mt-8 text-center text-sm text-muted-foreground">
           Ready to scope a project?{" "}
           <Link href="/contact" className="font-semibold text-primary underline-offset-4 hover:underline">
-            Contact TechTaxCorp
+            Contact TTCorpSolutions
           </Link>
           .
         </p>

@@ -1,16 +1,16 @@
 import { cn } from "@/lib/utils";
-import brandLogo from "@/assets/images/techtaxfinalogo.png";
+import brandLogo from "@/assets/images/ttcorp-logo.jpeg";
 
-type TechTaxCorpLogoProps = {
+type TTCorpSolutionsLogoProps = {
   className?: string;
   variant?: "header" | "footer";
 };
 
-export function TechTaxCorpLogo({ className, variant = "header" }: TechTaxCorpLogoProps) {
+export function TTCorpSolutionsLogo({ className, variant = "header" }: TTCorpSolutionsLogoProps) {
   return (
     <img
       src={brandLogo}
-      alt="TechTaxCorp logo — ledger software and business application development company"
+      alt="TTCorpSolutions logo — ledger software and business application development company"
       width={520}
       height={140}
       className={cn(

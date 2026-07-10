@@ -202,7 +202,7 @@ export function Hero3D() {
             transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-slate-300 sm:mt-6 sm:text-lg lg:text-xl"
           >
-            TechTaxCorp builds ledger platforms and field-ready software —{" "}
+            TTCorpSolutions builds ledger platforms and field-ready software —{" "}
             <strong className="font-semibold text-white">VahanBooks</strong> for transport,{" "}
             <strong className="font-semibold text-white">MySiteWorks</strong> for construction — plus
             custom apps, websites, and enterprise workflows.
