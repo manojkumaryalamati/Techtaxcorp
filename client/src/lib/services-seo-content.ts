@@ -12,7 +12,7 @@ export const softwareServiceSections: ServiceSeoSection[] = [
     id: "custom-web-applications",
     heading: "Custom web application development",
     intro:
-      "TTCorpSolutions builds secure, role-based web applications tailored to approvals, documents, reporting, and day-to-day operations—so your team replaces spreadsheets with one dependable system.",
+      "TTCorp Solutions builds secure, role-based web applications tailored to approvals, documents, reporting, and day-to-day operations—so your team replaces spreadsheets with one dependable system.",
     benefits: [
       "Workflows mapped to how your business actually runs",
       "Admin, partner, and customer portals with clear permissions",

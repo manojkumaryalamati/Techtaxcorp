@@ -12,7 +12,7 @@ export function TTCorpSolutionsLogo({ className, variant = "header" }: TTCorpSol
   return (
     <img
       src={brandLogo}
-      alt="TTCorpSolutions logo — ledger software and business application development company"
+      alt="TTCorp Solutions logo — ledger software and business application development company"
       width={980}
       height={444}
       className={cn(

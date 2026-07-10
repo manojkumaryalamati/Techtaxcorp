@@ -177,7 +177,7 @@ export default function ServicesAccounting() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
-              <h2 className="font-serif text-3xl font-bold sm:text-4xl mb-6">Why Choose TTCorpSolutions?</h2>
+              <h2 className="font-serif text-3xl font-bold sm:text-4xl mb-6">Why Choose TTCorp Solutions?</h2>
               <p className="text-lg text-muted-foreground mb-8">
                 We're not just number crunchers. We're your financial partners, committed to helping
                 your business succeed.
@@ -260,7 +260,7 @@ export default function ServicesAccounting() {
             Ready to Simplify Your Finances?
           </h2>
           <p className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
-            Join hundreds of small businesses who trust TTCorpSolutions with their accounting needs.
+            Join hundreds of small businesses who trust TTCorp Solutions with their accounting needs.
           </p>
           <Button size="lg" variant="secondary" asChild data-testid="button-get-quote-acc">
             <Link href="/contact">Get a Quote</Link>

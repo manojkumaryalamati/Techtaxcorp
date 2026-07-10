@@ -16,10 +16,10 @@ const categoryColors: Record<string, string> = {
 
 export default function Blog() {
   useSEO({
-    title: "TTCorpSolutions Blog | Software, Products & Business Operations",
-    description: "Articles from TTCorpSolutions on ledger software, transport and construction operations, product updates for VahanBooks and MySiteWorks, websites, and custom application development.",
+    title: "TTCorp Solutions Blog | Software, Products & Business Operations",
+    description: "Articles from TTCorp Solutions on ledger software, transport and construction operations, product updates for VahanBooks and MySiteWorks, websites, and custom application development.",
     canonicalPath: "/blog",
-    keywords: ["TTCorpSolutions blog", "business software", "VahanBooks", "MySiteWorks", "ledger software"],
+    keywords: ["TTCorp Solutions blog", "business software", "VahanBooks", "MySiteWorks", "ledger software"],
   });
 
   return (

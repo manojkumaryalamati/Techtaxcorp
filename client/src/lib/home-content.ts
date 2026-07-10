@@ -1,83 +1,182 @@
 import type { LucideIcon } from "lucide-react";
 import {
   AppWindow,
-  BookOpen,
-  Globe,
-  LayoutDashboard,
-  Megaphone,
   Smartphone,
-  Workflow,
-  Shield,
+  Globe,
+  Megaphone,
   Truck,
   HardHat,
   Store,
   Wrench,
-  MapPin,
-  Rocket,
+  Users,
+  Briefcase,
+  UtensilsCrossed,
 } from "lucide-react";
 
 export const vahanbooksFeatures = [
   "Trip management",
   "Party and supplier khata",
   "Payments and invoices",
-  "POD and documents",
-  "Reports and reminders",
+  "Documents and reports",
+  "WhatsApp reminders",
 ] as const;
 
 export const mysiteworksFeatures = [
-  "Project dashboard",
+  "Project dashboards",
   "Expense tracking",
   "Progress updates",
-  "Document storage",
+  "Documents",
   "Payments and reports",
 ] as const;
 
-export type ServiceItem = {
+export const oneprimeFeatures = [
+  "Provider marketplace",
+  "Food and local services",
+  "Events and venues",
+  "Rides and rentals",
+  "Community features",
+] as const;
+
+export type ProductItem = {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  features: readonly string[];
+  platforms: string[];
+  href: string;
+  caseStudyHref?: string;
+  accent: "orange" | "sky" | "violet";
+};
+
+export const productItems: ProductItem[] = [
+  {
+    id: "vahanbooks",
+    name: "VahanBooks",
+    category: "Transport & Logistics",
+    description:
+      "Transport management and digital khata software for truck owners, brokers, fleet operators, and logistics businesses.",
+    features: vahanbooksFeatures,
+    platforms: ["Android", "iOS", "Web"],
+    href: "/vahanbooks",
+    caseStudyHref: "/vahanbooks",
+    accent: "orange",
+  },
+  {
+    id: "mysiteworks",
+    name: "MySiteWorks",
+    category: "Construction",
+    description:
+      "Construction project and expense management software for owners, contractors, partners, and project teams.",
+    features: mysiteworksFeatures,
+    platforms: ["Android", "iOS", "Web"],
+    href: "/mysiteworks",
+    caseStudyHref: "/mysiteworks",
+    accent: "sky",
+  },
+  {
+    id: "oneprime",
+    name: "OnePrime",
+    category: "Marketplace",
+    description:
+      "A mobile-first marketplace connecting customers with local providers, restaurants, rides, events, rentals, jobs, and professional services.",
+    features: oneprimeFeatures,
+    platforms: ["Android", "iOS"],
+    href: "/#products",
+    accent: "violet",
+  },
+];
+
+export type ClientCaseStudy = {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  technologies: string[];
+};
+
+export const clientCaseStudies: ClientCaseStudy[] = [
+  {
+    id: "dasara-luxury-eats",
+    name: "Dasara Luxury Eats",
+    category: "Food & Catering Platform",
+    description:
+      "A responsive food and catering platform with menu management, ordering workflows, promotional features, and an administration experience.",
+    technologies: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
+  },
+  {
+    id: "forty-niner-trucking",
+    name: "Forty Niner Trucking LLC",
+    category: "Corporate & Careers Website",
+    description:
+      "A professional trucking company website with service presentation, job applications, Firebase-powered workflows, and responsive design.",
+    technologies: ["React", "TypeScript", "Firebase", "Vite"],
+  },
+];
+
+export const trustStripItems: string[] = [
+  "VahanBooks",
+  "MySiteWorks",
+  "OnePrime",
+  "Dasara Luxury Eats",
+  "Forty Niner Trucking LLC",
+];
+
+export type ServiceGroup = {
   title: string;
   description: string;
   icon: LucideIcon;
+  items: string[];
 };
 
-export const serviceItems: ServiceItem[] = [
+export const serviceGroups: ServiceGroup[] = [
   {
-    title: "Custom Web Applications",
-    description: "Purpose-built web apps and internal tools tailored to how your team actually works.",
+    title: "Custom Software Development",
+    description: "Business systems built around how your team actually works.",
     icon: AppWindow,
+    items: [
+      "Web applications",
+      "SaaS platforms",
+      "Business software",
+      "Admin dashboards",
+      "Workflow automation",
+    ],
   },
   {
     title: "Mobile App Development",
-    description: "Mobile-first iOS and Android experiences for teams in the field and on the move.",
+    description: "Native-quality apps for teams and customers on the move.",
     icon: Smartphone,
+    items: [
+      "Android applications",
+      "iOS applications",
+      "Cross-platform apps",
+      "App Store deployment",
+      "Play Store deployment",
+    ],
   },
   {
-    title: "Business Dashboards",
-    description: "Clear operational dashboards so owners and managers see status, cash flow, and workload at a glance.",
-    icon: LayoutDashboard,
-  },
-  {
-    title: "Ledger and Khata Software",
-    description: "Practical ledger-style workflows for parties, suppliers, trips, and collections—without spreadsheet chaos.",
-    icon: BookOpen,
-  },
-  {
-    title: "Website Development",
-    description: "Fast, modern marketing sites and product pages that stay easy to update as you grow.",
+    title: "Website Design and Development",
+    description: "Fast, modern websites that stay easy to grow and update.",
     icon: Globe,
+    items: [
+      "Business websites",
+      "E-commerce websites",
+      "Responsive redesign",
+      "Landing pages",
+      "Hosting and deployment",
+    ],
   },
   {
-    title: "Digital Marketing",
-    description: "Structured campaigns and content support that connect your software story to the right customers.",
+    title: "Digital Growth",
+    description: "Marketing support that connects your product to customers.",
     icon: Megaphone,
-  },
-  {
-    title: "Business Automation",
-    description: "Notifications, reminders, approvals, and integrations that reduce manual follow-ups.",
-    icon: Workflow,
-  },
-  {
-    title: "Admin Panels and Portals",
-    description: "Secure admin, partner, and customer portals with roles, audit-friendly activity, and reporting.",
-    icon: Shield,
+    items: [
+      "Digital marketing",
+      "Social media campaigns",
+      "SEO foundations",
+      "Marketing creatives",
+      "Lead-generation setup",
+    ],
   },
 ];
 
@@ -89,65 +188,89 @@ export type IndustryItem = {
 
 export const industryItems: IndustryItem[] = [
   {
-    title: "Transport and Logistics",
+    title: "Transportation and Logistics",
     description: "Fleet-friendly workflows for trips, khata, PODs, and collections.",
     icon: Truck,
   },
   {
-    title: "Construction and Contractors",
+    title: "Construction and Contracting",
     description: "Site-first tools for progress, expenses, documents, and client updates.",
     icon: HardHat,
   },
   {
-    title: "Small Businesses",
-    description: "Simple systems that replace scattered chats, notebooks, and spreadsheets.",
-    icon: Store,
+    title: "Food and Hospitality",
+    description: "Menus, ordering, and promotions for restaurants and caterers.",
+    icon: UtensilsCrossed,
   },
   {
-    title: "Service Companies",
-    description: "Scheduling, billing, and customer communication in one practical stack.",
+    title: "Local Service Businesses",
+    description: "Scheduling, billing, and customer communication in one stack.",
     icon: Wrench,
   },
   {
-    title: "Local Businesses",
-    description: "Mobile-first experiences your staff will actually use every day.",
-    icon: MapPin,
+    title: "Community Marketplaces",
+    description: "Provider and customer experiences for local marketplaces.",
+    icon: Users,
   },
   {
-    title: "Startups",
-    description: "Lean product builds with room to scale architecture as traction grows.",
-    icon: Rocket,
+    title: "Professional Services",
+    description: "Client portals, documents, and reporting for service firms.",
+    icon: Briefcase,
+  },
+  {
+    title: "Retail and Small Businesses",
+    description: "Simple systems that replace scattered chats and spreadsheets.",
+    icon: Store,
   },
 ];
 
 export const whyHighlights = [
-  "Mobile-first design",
-  "Practical business workflows",
-  "Clean dashboards",
-  "Simple user experience",
-  "Scalable application architecture",
-  "Affordable digital solutions",
+  "Business-first product planning",
+  "Mobile-first user experience",
+  "Clean and scalable architecture",
+  "Transparent development milestones",
+  "Cross-platform delivery",
+  "Launch and ongoing support",
 ] as const;
 
 export const processSteps = [
   {
     step: "1",
-    title: "Understand Your Business",
-    description: "We map how work really happens—people, approvals, documents, and edge cases included.",
+    title: "Discovery and Planning",
+    description:
+      "We understand the business, users, workflows, goals, requirements, and technical constraints.",
   },
   {
     step: "2",
-    title: "Design the Workflow",
-    description: "We turn messy operations into a clear screen-by-screen flow your team can adopt quickly.",
+    title: "Design and Prototyping",
+    description:
+      "We create user flows, wireframes, responsive interfaces, and interactive design concepts.",
   },
   {
     step: "3",
-    title: "Build the Application",
-    description: "We ship in focused milestones with demos, feedback loops, and sensible defaults.",
+    title: "Development and Testing",
+    description:
+      "We build in structured milestones and test across supported browsers, devices, and platforms.",
   },
   {
     step: "4",
-    title: "Launch and Improve",
-    description: "We help you go live, train your team, and iterate based on real daily usage.",
+    title: "Launch and Support",
+    description:
+      "We deploy the product, support store submissions, monitor issues, and provide ongoing improvements.",
   },
 ] as const;
+
+export const technologyItems: string[] = [
+  "React",
+  "React Native",
+  "Expo",
+  "TypeScript",
+  "Firebase",
+  "Node.js",
+  "Vite",
+  "Tailwind CSS",
+  "Google Cloud",
+  "GitHub",
+  "Apple App Store",
+  "Google Play",
+];

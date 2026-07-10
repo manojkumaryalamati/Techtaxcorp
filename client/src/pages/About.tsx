@@ -32,10 +32,10 @@ const whyChooseUs = [
 
 export default function About() {
   useSEO({
-    title: "About TTCorpSolutions | Ledger Software & Application Development Company",
-    description: "TTCorpSolutions is a ledger software and application development company building VahanBooks, MySiteWorks, and custom business applications—mobile apps, dashboards, websites, and SaaS products for growing teams.",
+    title: "About TTCorp Solutions | Ledger Software & Application Development Company",
+    description: "TTCorp Solutions is a ledger software and application development company building VahanBooks, MySiteWorks, and custom business applications—mobile apps, dashboards, websites, and SaaS products for growing teams.",
     canonicalPath: "/about",
-    keywords: ["TTCorpSolutions", "about TTCorpSolutions", "ledger software company", "business software development", "VahanBooks", "MySiteWorks"],
+    keywords: ["TTCorp Solutions", "about TTCorp Solutions", "ledger software company", "business software development", "VahanBooks", "MySiteWorks"],
   });
 
   return (
@@ -50,7 +50,7 @@ export default function About() {
               Software for businesses that run on real-world logistics
             </h1>
             <p className="text-lg text-muted-foreground">
-              TTCorpSolutions designs and ships practical, mobile-first software—our products include VahanBooks for
+              TTCorp Solutions designs and ships practical, mobile-first software—our products include VahanBooks for
               transport operations and MySiteWorks for construction teams—alongside custom web apps, dashboards, and
               websites when you need something tailored.
             </p>
@@ -104,7 +104,7 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl font-bold mb-4">Our Values</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">These core values guide everything we do at TTCorpSolutions.</p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">These core values guide everything we do at TTCorp Solutions.</p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {values.map((value) => (
@@ -149,7 +149,7 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
-              <h2 className="font-serif text-3xl font-bold mb-6">Why Choose TTCorpSolutions?</h2>
+              <h2 className="font-serif text-3xl font-bold mb-6">Why Choose TTCorp Solutions?</h2>
               <p className="text-lg text-muted-foreground mb-8">
                 When you work with us, you get more than just a service provider—you get a dedicated partner committed to your success.
               </p>

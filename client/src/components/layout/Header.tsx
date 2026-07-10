@@ -47,9 +47,9 @@ const navigation: NavEntry[] = [
     ],
   },
   { name: "Services", href: "/services" },
+  { name: "Our Work", href: "/#client-work" },
   { name: "Industries", href: "/#industries" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -70,7 +70,7 @@ export function Header() {
           <TTCorpSolutionsLogo variant="header" />
         </Link>
 
-        <div className="hidden lg:flex lg:items-center lg:gap-1">
+        <div className="hidden lg:flex lg:items-center lg:gap-3">
           <NavigationMenu>
             <NavigationMenuList>
               {navigation.map((item) => (
@@ -121,8 +121,16 @@ export function Header() {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
+          <Button
+            className="rounded-full bg-orange-500 text-white hover:bg-orange-600"
+            data-testid="button-header-start-project"
+            asChild
+          >
+            <Link href="/contact">Start a Project</Link>
+          </Button>
         </div>
 
+        <div className="flex items-center gap-2 lg:hidden">
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger asChild className="lg:hidden">
             <Button variant="ghost" size="icon" data-testid="button-mobile-menu">
@@ -190,6 +198,7 @@ export function Header() {
             </div>
           </SheetContent>
         </Sheet>
+        </div>
       </nav>
     </header>
   );

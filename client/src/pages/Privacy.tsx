@@ -4,8 +4,8 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Privacy() {
   useSEO({
-    title: "Privacy Policy | TTCorpSolutions",
-    description: "TTCorpSolutions privacy policy—how we collect, use, store, and protect personal information when you use our website and services.",
+    title: "Privacy Policy | TTCorp Solutions",
+    description: "TTCorp Solutions privacy policy—how we collect, use, store, and protect personal information when you use our website and services.",
     canonicalPath: "/privacy",
     robots: "index, follow",
   });
@@ -27,7 +27,7 @@ export default function Privacy() {
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <h2>Introduction</h2>
             <p>
-              TTCorpSolutions ("we," "our," or "us") respects your privacy and is committed to protecting your personal data.
+              TTCorp Solutions ("we," "our," or "us") respects your privacy and is committed to protecting your personal data.
               This privacy policy explains how we collect, use, disclose, and safeguard your information when you visit
               our website or use our services.
             </p>

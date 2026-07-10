@@ -13,11 +13,11 @@ const orgId = `${SITE_ORIGIN}/#organization`;
 
 export default function MySiteWorks() {
   useSEO({
-    title: "MySiteWorks by TTCorpSolutions | Construction Project Management Software",
+    title: "MySiteWorks by TTCorp Solutions | Construction Project Management Software",
     description:
-      "MySiteWorks helps owners, contractors, and construction teams manage projects, expenses, progress, documents, payments, and reports in one place—designed and developed by TTCorpSolutions.",
+      "MySiteWorks helps owners, contractors, and construction teams manage projects, expenses, progress, documents, payments, and reports in one place—designed and developed by TTCorp Solutions.",
     canonicalPath: "/mysiteworks",
-    keywords: ["MySiteWorks", "TTCorpSolutions", "construction project management software", "construction expense tracking", "site management app", "builder software India"],
+    keywords: ["MySiteWorks", "TTCorp Solutions", "construction project management software", "construction expense tracking", "site management app", "builder software India"],
   });
 
   const softwareJsonLd = {
@@ -25,7 +25,7 @@ export default function MySiteWorks() {
     name: "MySiteWorks",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, Android, iOS",
-    description: "MySiteWorks, designed and developed by TTCorpSolutions, helps construction teams manage projects, expenses, progress, documents, and payments from one simple app.",
+    description: "MySiteWorks, designed and developed by TTCorp Solutions, helps construction teams manage projects, expenses, progress, documents, and payments from one simple app.",
     url: `${SITE_ORIGIN}/mysiteworks`,
     author: { "@type": "Organization", "@id": orgId },
     publisher: { "@type": "Organization", "@id": orgId },
@@ -48,13 +48,13 @@ export default function MySiteWorks() {
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
             <Badge className="mb-4 rounded-md bg-sky-600 text-white">Construction software</Badge>
             <h1 id="mysiteworks-hero-heading" className="font-serif text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              MySiteWorks by TTCorpSolutions
+              MySiteWorks by TTCorp Solutions
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-sky-800 dark:text-sky-300">
               Simple construction project management for modern builders.
             </p>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground sm:text-lg">
-              MySiteWorks, designed and developed by TTCorpSolutions, helps construction teams manage projects, expenses,
+              MySiteWorks, designed and developed by TTCorp Solutions, helps construction teams manage projects, expenses,
               progress, documents, and payments from one simple app.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -91,7 +91,7 @@ export default function MySiteWorks() {
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <Card><CardContent className="p-6"><h3 className="font-semibold">Site-first updates</h3><p className="mt-2 text-sm text-muted-foreground">Progress photos, notes, and approvals stay tied to the project—so clients see a clear story, not random chat threads.</p></CardContent></Card>
               <Card><CardContent className="p-6"><h3 className="font-semibold">Spend visibility</h3><p className="mt-2 text-sm text-muted-foreground">Expenses and commitments stay organized by project—helping owners protect margin before invoices pile up.</p></CardContent></Card>
-              <Card><CardContent className="p-6"><h3 className="font-semibold">Designed and developed by TTCorpSolutions</h3><p className="mt-2 text-sm text-muted-foreground">One accountable product team—from discovery to releases you can plan around.</p></CardContent></Card>
+              <Card><CardContent className="p-6"><h3 className="font-semibold">Designed and developed by TTCorp Solutions</h3><p className="mt-2 text-sm text-muted-foreground">One accountable product team—from discovery to releases you can plan around.</p></CardContent></Card>
             </div>
           </div>
         </section>
@@ -102,7 +102,7 @@ export default function MySiteWorks() {
             <h2 id="mysiteworks-cta-heading" className="mt-4 font-serif text-2xl font-bold">Plan your next build on one system</h2>
             <p className="mt-3 text-muted-foreground">Share how you track projects today—we will map a simple rollout and what to digitize first.</p>
             <Button asChild size="lg" className="mt-6 rounded-full bg-sky-600 hover:bg-sky-500">
-              <Link href="/contact?interest=mysiteworks">Contact TTCorpSolutions</Link>
+              <Link href="/contact?interest=mysiteworks">Contact TTCorp Solutions</Link>
             </Button>
           </div>
         </section>
