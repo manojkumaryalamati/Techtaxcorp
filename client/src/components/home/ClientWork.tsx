@@ -36,13 +36,26 @@ export function ClientWork() {
               className="flex h-full flex-col overflow-hidden rounded-[18px] border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition-shadow duration-300 hover:shadow-[0_12px_32px_rgba(15,23,42,0.10)] dark:border-white/10 dark:bg-white/[0.04]"
             >
               <div
-                className="flex min-h-[180px] items-center justify-center bg-gradient-to-br from-slate-100 to-slate-50 p-8 dark:from-white/[0.06] dark:to-white/[0.02]"
+                className={`flex min-h-[180px] items-center justify-center p-8 ${
+                  client.logo && client.logoBg === "dark"
+                    ? "bg-gradient-to-br from-slate-900 to-black"
+                    : "bg-gradient-to-br from-slate-100 to-slate-50 dark:from-white/[0.06] dark:to-white/[0.02]"
+                }`}
                 role="img"
-                aria-label={`${client.name} project screenshot placeholder`}
+                aria-label={`${client.name} logo`}
               >
-                <span className="text-3xl font-bold tracking-tight text-slate-300 dark:text-white/15 text-center">
-                  {client.name}
-                </span>
+                {client.logo ? (
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="max-h-24 w-auto max-w-[200px] object-contain sm:max-h-28"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className="text-3xl font-bold tracking-tight text-slate-300 dark:text-white/15 text-center">
+                    {client.name}
+                  </span>
+                )}
               </div>
               <div className="flex flex-1 flex-col p-6 sm:p-8">
                 <Badge variant="outline" className="w-fit rounded-md border-blue-500/30 text-blue-700 dark:text-blue-300">

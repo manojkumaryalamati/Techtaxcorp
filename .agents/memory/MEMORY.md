@@ -1,1 +1,2 @@
 - [TTCorp Solutions brand rename](ttcorp-brand-rename.md) — display text is "TTCorp Solutions" (space); component/identifier names keep "TTCorpSolutions" (no space) intentionally.
+- [Shared PageHero component](page-hero-component.md) — reusable dark navy/orange hero exists; use it for new pages instead of one-off light hero sections.

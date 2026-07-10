@@ -2,7 +2,6 @@ import { Link } from "wouter";
 import { useSEO } from "@/hooks/use-seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
   BookOpen,
   FileText,
@@ -14,6 +13,7 @@ import {
   Clock,
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { PageHero } from "@/components/layout/PageHero";
 
 const services = [
   {
@@ -119,25 +119,21 @@ export default function ServicesAccounting() {
 
   return (
     <Layout>
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-chart-2/5 via-background to-accent/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <Badge variant="secondary" className="mb-4">Accounting Services</Badge>
-            <h1 className="font-serif text-4xl font-bold sm:text-5xl mb-6">
-              Accounting & Tax Services
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Expert bookkeeping, tax preparation, and financial consulting for small businesses and
-              individuals. Focus on your business while we handle the numbers.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Button size="lg" asChild data-testid="button-get-started-acc">
-                <Link href="/contact">Get Started</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Accounting Services"
+        title="Accounting & Tax Services"
+        description="Expert bookkeeping, tax preparation, and financial consulting for small businesses and individuals. Focus on your business while we handle the numbers."
+        actions={
+          <Button
+            size="lg"
+            className="h-12 rounded-full border-0 bg-gradient-to-r from-orange-500 to-orange-600 px-8 text-base font-semibold text-white shadow-lg shadow-orange-500/30 hover:from-orange-400 hover:to-orange-500"
+            asChild
+            data-testid="button-get-started-acc"
+          >
+            <Link href="/contact">Get Started</Link>
+          </Button>
+        }
+      />
 
       <section className="py-16 sm:py-24 border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

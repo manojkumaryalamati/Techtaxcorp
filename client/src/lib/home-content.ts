@@ -12,6 +12,10 @@ import {
   Briefcase,
   UtensilsCrossed,
 } from "lucide-react";
+import vahanbooksLogo from "@assets/ChatGPT_Image_Mar_28,_2026,_07_57_02_AM_social_(1)_1783702782932.png";
+import oneprimeLogo from "@assets/oneprime_1783702831763.png";
+import dasaraLogo from "@assets/fevicon_1783702814118.png";
+import fortyNinerLogo from "@assets/fortyninertrucking_logo_1783702887230.png";
 
 export const vahanbooksFeatures = [
   "Trip management",
@@ -47,6 +51,7 @@ export type ProductItem = {
   href: string;
   caseStudyHref?: string;
   accent: "orange" | "sky" | "violet";
+  logo?: string;
 };
 
 export const productItems: ProductItem[] = [
@@ -61,6 +66,7 @@ export const productItems: ProductItem[] = [
     href: "/vahanbooks",
     caseStudyHref: "/vahanbooks",
     accent: "orange",
+    logo: vahanbooksLogo,
   },
   {
     id: "mysiteworks",
@@ -74,6 +80,7 @@ export const productItems: ProductItem[] = [
     caseStudyHref: "/mysiteworks",
     accent: "sky",
   },
+  // Note: no dedicated MySiteWorks logo asset provided; keep text placeholder.
   {
     id: "oneprime",
     name: "OnePrime",
@@ -84,6 +91,7 @@ export const productItems: ProductItem[] = [
     platforms: ["Android", "iOS"],
     href: "/#products",
     accent: "violet",
+    logo: oneprimeLogo,
   },
 ];
 
@@ -93,6 +101,8 @@ export type ClientCaseStudy = {
   category: string;
   description: string;
   technologies: string[];
+  logo?: string;
+  logoBg?: "light" | "dark";
 };
 
 export const clientCaseStudies: ClientCaseStudy[] = [
@@ -103,6 +113,8 @@ export const clientCaseStudies: ClientCaseStudy[] = [
     description:
       "A responsive food and catering platform with menu management, ordering workflows, promotional features, and an administration experience.",
     technologies: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
+    logo: dasaraLogo,
+    logoBg: "dark",
   },
   {
     id: "forty-niner-trucking",
@@ -111,6 +123,8 @@ export const clientCaseStudies: ClientCaseStudy[] = [
     description:
       "A professional trucking company website with service presentation, job applications, Firebase-powered workflows, and responsive design.",
     technologies: ["React", "TypeScript", "Firebase", "Vite"],
+    logo: fortyNinerLogo,
+    logoBg: "dark",
   },
 ];
 

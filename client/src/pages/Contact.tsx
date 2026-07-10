@@ -7,7 +7,6 @@ import { useMutation } from "@tanstack/react-query";
 import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -28,6 +27,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Calendar, CheckCircle2, Loader2 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { PageHero } from "@/components/layout/PageHero";
 import { contactFormSchema, type ContactFormData } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 
@@ -120,17 +120,11 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-primary/5 via-background to-accent/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <Badge variant="secondary" className="mb-4">Contact Us</Badge>
-            <h1 className="font-serif text-4xl font-bold sm:text-5xl mb-6">Let's Start a Conversation</h1>
-            <p className="text-lg text-muted-foreground">
-              Ready to elevate your online presence or streamline your finances? Get in touch and let's discuss how we can help your business grow.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact Us"
+        title="Let's Start a Conversation"
+        description="Ready to elevate your online presence or streamline your finances? Get in touch and let's discuss how we can help your business grow."
+      />
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

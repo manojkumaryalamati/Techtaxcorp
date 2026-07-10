@@ -2,7 +2,6 @@ import { Link } from "wouter";
 import { useSEO } from "@/hooks/use-seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
   Building2,
   User,
@@ -14,6 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { PageHero } from "@/components/layout/PageHero";
 
 const services = [
   {
@@ -119,28 +119,32 @@ export default function ServicesWebsites() {
 
   return (
     <Layout>
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-primary/5 via-background to-accent/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <Badge variant="secondary" className="mb-4">Web Services</Badge>
-            <h1 className="font-serif text-4xl font-bold sm:text-5xl mb-6">
-              Web Design & Development
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Professional website design services for businesses and individuals. We create beautiful,
-              fast, and SEO-optimized websites that convert visitors into customers.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Button size="lg" asChild data-testid="button-get-started-web">
-                <Link href="/contact">Get Started</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild data-testid="button-view-portfolio-web">
-                <Link href="/portfolio">See Our Work</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Web Services"
+        title="Web Design & Development"
+        description="Professional website design services for businesses and individuals. We create beautiful, fast, and SEO-optimized websites that convert visitors into customers."
+        actions={
+          <>
+            <Button
+              size="lg"
+              className="h-12 rounded-full border-0 bg-gradient-to-r from-orange-500 to-orange-600 px-8 text-base font-semibold text-white shadow-lg shadow-orange-500/30 hover:from-orange-400 hover:to-orange-500"
+              asChild
+              data-testid="button-get-started-web"
+            >
+              <Link href="/contact">Get Started</Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="h-12 rounded-full border border-white/20 bg-white/[0.06] px-8 text-base text-white backdrop-blur-sm hover:border-white/35 hover:bg-white/[0.11]"
+              asChild
+              data-testid="button-view-portfolio-web"
+            >
+              <Link href="/portfolio">See Our Work</Link>
+            </Button>
+          </>
+        }
+      />
 
       <section className="py-16 sm:py-24 border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

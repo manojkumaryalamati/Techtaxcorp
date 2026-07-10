@@ -1,11 +1,10 @@
 import { Link } from "wouter";
 import { useSEO } from "@/hooks/use-seo";
-import heroBg from "@/assets/images/hero-bg-optimized.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Globe, Calculator, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { PageHero } from "@/components/layout/PageHero";
 import { softwareServiceSections } from "@/lib/services-seo-content";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_ORIGIN } from "@/lib/seo-constants";
@@ -43,29 +42,31 @@ export default function Services() {
     <Layout>
       <JsonLd data={serviceSchemas} />
 
-      <section className="relative overflow-hidden py-16 sm:py-24" aria-labelledby="services-hero-heading">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroBg})` }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge variant="secondary" className="mb-4">Services</Badge>
-            <h1 id="services-hero-heading" className="mb-6 font-serif text-4xl font-bold sm:text-5xl">
-              Business software, web &amp; mobile development from TTCorp Solutions
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              TTCorp Solutions designs and develops ledger software, SaaS products like VahanBooks and MySiteWorks, custom
-              applications, and modern websites—then helps you ship improvements as usage grows. We also offer
-              accounting and tax support for clients who need it.
-            </p>
-            <Button className="mt-8 rounded-full" size="lg" asChild>
-              <Link href="/contact">
-                Discuss your project
-                <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        id="services-hero-heading"
+        eyebrow="Services"
+        title={
+          <>
+            Business software, web &amp; mobile development from{" "}
+            <span className="bg-gradient-to-r from-orange-400 to-sky-400 bg-clip-text text-transparent">
+              TTCorp Solutions
+            </span>
+          </>
+        }
+        description="TTCorp Solutions designs and develops ledger software, SaaS products like VahanBooks and MySiteWorks, custom applications, and modern websites—then helps you ship improvements as usage grows. We also offer accounting and tax support for clients who need it."
+        actions={
+          <Button
+            className="h-12 rounded-full border-0 bg-gradient-to-r from-orange-500 to-orange-600 px-8 text-base font-semibold text-white shadow-lg shadow-orange-500/30 hover:from-orange-400 hover:to-orange-500"
+            size="lg"
+            asChild
+          >
+            <Link href="/contact">
+              Discuss your project
+              <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+            </Link>
+          </Button>
+        }
+      />
 
       <section className="border-b py-12 sm:py-16" aria-label="Software development services">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

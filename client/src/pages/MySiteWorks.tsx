@@ -1,8 +1,8 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Layout } from "@/components/layout/Layout";
+import { PageHero } from "@/components/layout/PageHero";
 import { useSEO } from "@/hooks/use-seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_ORIGIN } from "@/lib/seo-constants";
@@ -44,31 +44,43 @@ export default function MySiteWorks() {
     <Layout>
       <JsonLd data={[softwareJsonLd, breadcrumbJsonLd]} />
       <article>
-        <section className="border-b bg-muted/20 py-12 sm:py-16" aria-labelledby="mysiteworks-hero-heading">
-          <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <Badge className="mb-4 rounded-md bg-sky-600 text-white">Construction software</Badge>
-            <h1 id="mysiteworks-hero-heading" className="font-serif text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              MySiteWorks by TTCorp Solutions
-            </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-sky-800 dark:text-sky-300">
-              Simple construction project management for modern builders.
-            </p>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground sm:text-lg">
-              MySiteWorks, designed and developed by TTCorp Solutions, helps construction teams manage projects, expenses,
-              progress, documents, and payments from one simple app.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button asChild size="lg" className="rounded-full bg-sky-600 hover:bg-sky-500">
+        <PageHero
+          id="mysiteworks-hero-heading"
+          eyebrow="Construction software"
+          title="MySiteWorks by TTCorp Solutions"
+          description={
+            <>
+              <span className="block text-sky-300">
+                Simple construction project management for modern builders.
+              </span>
+              <span className="mt-3 block">
+                MySiteWorks, designed and developed by TTCorp Solutions, helps construction teams manage projects,
+                expenses, progress, documents, and payments from one simple app.
+              </span>
+            </>
+          }
+          actions={
+            <>
+              <Button
+                asChild
+                size="lg"
+                className="h-12 rounded-full border-0 bg-gradient-to-r from-sky-500 to-sky-600 px-8 text-base font-semibold text-white shadow-lg shadow-sky-500/30 hover:from-sky-400 hover:to-sky-500"
+              >
                 <Link href="/contact?interest=mysiteworks">
                   Ask about MySiteWorks <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="h-12 rounded-full border border-white/20 bg-white/[0.06] px-8 text-base text-white backdrop-blur-sm hover:border-white/35 hover:bg-white/[0.11]"
+              >
                 <Link href="/#products">Back to products overview</Link>
               </Button>
-            </div>
-          </div>
-        </section>
+            </>
+          }
+        />
 
         <section className="py-12 sm:py-16" aria-labelledby="mysiteworks-capabilities-heading">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

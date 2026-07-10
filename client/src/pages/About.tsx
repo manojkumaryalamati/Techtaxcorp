@@ -1,11 +1,10 @@
 import { Link } from "wouter";
 import { useSEO } from "@/hooks/use-seo";
-import heroBg from "@/assets/images/hero-bg-optimized.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Target, Heart, Users, Award, CheckCircle2, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { PageHero } from "@/components/layout/PageHero";
 
 const values = [
   { icon: Target, title: "Excellence", description: "We strive for excellence in product design, engineering, delivery, and the day-to-day support you need after launch." },
@@ -40,23 +39,11 @@ export default function About() {
 
   return (
     <Layout>
-      <section className="relative overflow-hidden py-16 sm:py-24">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroBg})` }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <Badge variant="secondary" className="mb-4">About Us</Badge>
-            <h1 className="font-serif text-4xl font-bold sm:text-5xl mb-6">
-              Software for businesses that run on real-world logistics
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              TTCorp Solutions designs and ships practical, mobile-first software—our products include VahanBooks for
-              transport operations and MySiteWorks for construction teams—alongside custom web apps, dashboards, and
-              websites when you need something tailored.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="About Us"
+        title="Software for businesses that run on real-world logistics"
+        description="TTCorp Solutions designs and ships practical, mobile-first software—our products include VahanBooks for transport operations and MySiteWorks for construction teams—alongside custom web apps, dashboards, and websites when you need something tailored."
+      />
 
       <section className="py-16 sm:py-24 border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
