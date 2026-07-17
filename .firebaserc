@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "techtaxcorp-b36a1"
-  }
+    "default": "techtaxcorp-307b9",
+    "firebase use --add": "techtaxcorp-307b9"
+  },
+  "targets": {},
+  "etags": {}
 }

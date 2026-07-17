@@ -35,11 +35,11 @@
    firebase deploy --only hosting
    ```
 
-Your site will be live at: https://techtaxcorp-b36a1.web.app
+Your site will be live at: https://techtaxcorp-307b9.web.app
 
 ## Connect Custom Domain (techtaxcorp.com)
 
-1. Go to Firebase Console: https://console.firebase.google.com/project/techtaxcorp-b36a1/hosting
+1. Go to Firebase Console: https://console.firebase.google.com/project/techtaxcorp-307b9/hosting
 2. Click "Add custom domain"
 3. Enter: techtaxcorp.com
 4. Follow the DNS verification steps

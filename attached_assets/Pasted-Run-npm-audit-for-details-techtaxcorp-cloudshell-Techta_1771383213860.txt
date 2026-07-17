@@ -1,5 +1,5 @@
 Run `npm audit` for details.
-techtaxcorp@cloudshell:~/Techtaxcorp (techtaxcorp-b36a1)$ npx tsx scripts/build-firebase.ts
+techtaxcorp@cloudshell:~/Techtaxcorp (techtaxcorp-307b9)$ npx tsx scripts/build-firebase.ts
 Building TechTaxCorp for Firebase Hosting...
 
 Step 1: Building frontend with Vite...

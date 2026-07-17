@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "techtaxcorp-b36a1",
+    "site": "techtaxcorp-307b9",
     "public": "client/dist",
     "ignore": [
       "firebase.json",
